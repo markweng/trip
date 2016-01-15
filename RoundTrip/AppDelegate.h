@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class HomeViewController;
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
-
+@property (strong, nonatomic) HomeViewController * homeViewController;
 @property (strong, nonatomic) UIWindow *window;
-
 
 @end
 
