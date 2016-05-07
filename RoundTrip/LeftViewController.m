@@ -29,7 +29,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor colorWithRed:128/255.0 green:184/255.0 blue:182/255.0 alpha:1.0];
+    self.view.backgroundColor = [UIColor colorWithRed:26/255.0 green:31/255.0 blue:36/255.0 alpha:1.0];
     [self createHeaderView];
     [self createTableView];
     [self createDataSource];
@@ -37,17 +37,19 @@
 
 - (void)createHeaderView {
     
-    UIImageView *headerView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, screenWidth()/3, screenWidth()/3)];
-    headerView.image = [UIImage imageNamed:@"headericon"];
-    [self.view addSubview:headerView];
+//    UIImageView *headerView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, screenWidth()/3, screenWidth()/3)];
+//    headerView.image = [UIImage imageNamed:@"headericon"];
+//    [self.view addSubview:headerView];
 }
 
 - (void)createTableView {
     _tableView = [[UITableView alloc] init];
-    _tableView.frame = CGRectMake(0, screenWidth()/3, 2 * screenWidth()/3,screenHeight()-screenWidth()/3);
+    _tableView.frame = CGRectMake(0, 20, screenWidth()/5*4,screenHeight()-20);
+    _tableView.backgroundColor = [UIColor colorWithRed:26/255.0 green:31/255.0 blue:36/255.0 alpha:1.0];
     _tableView.alpha = 0.8;
     _tableView.dataSource = self;
     _tableView.delegate = self;
+    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview:_tableView];
 }
 
@@ -69,6 +71,9 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
+    cell.backgroundColor = [UIColor colorWithRed:26/255.0 green:31/255.0 blue:36/255.0 alpha:1.0];
+    
+    cell.textLabel.textColor = [UIColor whiteColor];
     cell.textLabel.text = _dataArray[indexPath.row];
     return cell;
 }
@@ -76,13 +81,14 @@
 #pragma mark tableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    return _tableView.frame.size.height/_dataArray.count;
+    return 44;
 }
 
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     //  AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     switch (indexPath.row) {
         case 0:
             

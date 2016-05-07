@@ -55,7 +55,14 @@
         _cycleScrollView.imageURLStringsGroup = _dataSource;
 }
 }
+- (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index {
 
+    if ([_delegate respondsToSelector:@selector(didSelectedBannerPage:)]) {
+        [_delegate didSelectedBannerPage:index];
+    }
+
+
+}
 - (void)awakeFromNib {
     // Initialization code
 }

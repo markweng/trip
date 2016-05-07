@@ -46,9 +46,7 @@
     [view addSubview:button];
     [self.view addSubview:view];
 
-  //  NSString *backArrowString = @"\U000025C0\U0000FE0E"; //BLACK LEFT-POINTING TRIANGLE PLUS VARIATION SELECTOR
-//    NSString *backArrowString = @"返回";
-//    UIBarButtonItem *backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:backArrowString style:UIBarButtonItemStylePlain target:nil action:nil];
+
    self.navigationController.navigationBar.alpha = 0;
  
 }

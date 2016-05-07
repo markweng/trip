@@ -7,13 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-//@protocol TapImageProtocol <NSObject>
-//
-//- (void)TapImageAction:(CGFloat)offset;
-//
-//@end
+@protocol DidSelectedBannerPage <NSObject>
+
+- (void)didSelectedBannerPage:(NSInteger)pageIndex;
+
+@end
 @class HomeElementsModel;
 @interface BannerViewCell : UITableViewCell
-//@property (nonatomic, weak)id<TapImageProtocol>delegate;
+@property (nonatomic, weak)id<DidSelectedBannerPage>delegate;
 @property (strong, nonatomic) HomeElementsModel *model;
 @end

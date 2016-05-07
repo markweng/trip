@@ -30,7 +30,7 @@
 #import "GangAotaiControllerViewController.h"
 #import "GuoWaiViewController.h"
 #import "ListStoryModel.h"
-@interface HomeViewController ()<UISearchBarDelegate,SearchViewDelegate>{
+@interface HomeViewController ()<UISearchBarDelegate, SearchViewDelegate, DidSelectedBannerPage>{
     HomeElementsModel *_elementModel;
     NSMutableArray *_storyModelAray;
     NSMutableArray *_travelNotesArray;
@@ -405,7 +405,6 @@
     if (section == 1) {
         return 1;
     }
-    NSLog(@"_++++=%ld",_travelNotesArray.count);
 
     return _travelNotesArray.count;
 }
@@ -416,7 +415,7 @@
         static NSString *fier = @"fier";
         BannerViewCell *cell = [[BannerViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:fier];
         cell.model = _elementModel;
-  //      cell.delegate = self;
+      cell.delegate = self;
         return cell;
     }
     
@@ -533,6 +532,17 @@
 //    dvc.bannerUrl = model.html_url;
 //    [self.navigationController pushViewController:dvc animated:YES];
 //}
+- (void)didSelectedBannerPage:(NSInteger)pageIndex {
+    
+    BannerdescViewController *dvc = [BannerdescViewController new];
+    ElementDataModel  *model = _elementModel.data[pageIndex];;
+    
+    dvc.bannerUrl = model.html_url;
+    [self.navigationController pushViewController:dvc animated:YES];
+    
+    
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
