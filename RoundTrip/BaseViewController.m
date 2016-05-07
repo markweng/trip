@@ -18,7 +18,7 @@
     [self.navigationController setNavigationBarHidden:YES];
 
         
-    NSString *backArrowString = @"返回";
+    NSString *backArrowString = @"back";
     UIBarButtonItem *backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:backArrowString style:UIBarButtonItemStylePlain target:nil action:nil];
     self.navigationItem.backBarButtonItem =  backBarButtonItem;
  
@@ -34,7 +34,7 @@
     view.backgroundColor = [UIColor colorWithRed:21/255.0 green:153/255.0 blue:225/255.0 alpha:1.0];
     UIButton *button = [[UIButton alloc] init];
     button.frame = CGRectMake(0, 20, 44, 44);
-    [button setImage:[UIImage imageNamed:@"leftIcon"] forState:UIControlStateNormal];
+    [button setImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
     [button addTarget:self action:@selector(backAction) forControlEvents:UIControlEventTouchUpInside];
     _titleLabel = [[UILabel alloc] init];
     _titleLabel.frame = CGRectMake(44, 24, screenWidth() - 88, 40);

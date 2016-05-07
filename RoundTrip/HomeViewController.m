@@ -52,21 +52,25 @@
 @implementation HomeViewController
 
 - (void)viewDidLoad {
-    
+
     [super viewDidLoad];
     self.automaticallyAdjustsScrollViewInsets = NO;
     CGRect frame = self.view.bounds;
     frame.origin.y += 64;
     frame.size.height -= 64;
     _tableView.frame = frame;
-    _storyModelAray = [NSMutableArray new];
-    _travelNotesArray = [NSMutableArray new];
+   
     [self reachability];
     [self createFloatButton];
     [self layoutViews];
 
 }
+- (void)createDataSource {
 
+    _storyModelAray = [NSMutableArray array];
+    _travelNotesArray = [NSMutableArray array];
+
+}
 - (void)createFloatButton {
     _controlButton = [UIButton buttonWithType:UIButtonTypeCustom];
     
@@ -253,11 +257,12 @@
     return;
 }
 - (void)loadNetData:(BOOL)isMore {
-
+    
+    
+    
     NSString *homeURL = nil;
     if (!isMore) {
-        [_storyModelAray removeAllObjects];
-        [_travelNotesArray removeAllObjects];
+       
         homeURL = HomeUrl;
         
     } else {
@@ -269,6 +274,10 @@
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSError *error = nil;
         _homeModel = [[HomeModel alloc] initWithData:responseObject error:&error];
+        if (!isMore) {
+            [_storyModelAray removeAllObjects];
+            [_travelNotesArray removeAllObjects];
+        }
         _moreUrl = _homeModel.data.next_start;
         for (HomeElementsModel *model in _homeModel.data.elements) {
             if (!isMore) {
@@ -279,20 +288,23 @@
                 
                 if ([model.type isEqualToString:@"10"]) {
                     
-                    ElementDataModel *storyModel = model.data[0];
+                    ElementDataModel *storyModel = [model.data firstObject];
+                    NSLog(@"%@",storyModel.text);
                     [_storyModelAray addObject:storyModel];
                 }
                 
                 if ([model.type isEqualToString:@"4"]) {
-                    ElementDataModel *travelNotesModel = model.data[0];
-                    [_travelNotesArray addObject:travelNotesModel];
+//                    ElementDataModel *travelNotesModel = [model.data firstObject];
+//                    [_travelNotesArray addObject:travelNotesModel];
+                    [_travelNotesArray addObject:[model.data firstObject]];
+
                 }
                 [MyCache setObject:responseObject forKey:MD5Hash(HomeUrl)];
             } else {
                 
                 if ([model.type isEqualToString:@"4"]) {
-                    ElementDataModel *travelNotesModel = model.data[0];
-                    [_travelNotesArray addObject:travelNotesModel];
+                   // ElementDataModel *travelNotesModel = [model.data firstObject];
+                    [_travelNotesArray addObject:[model.data firstObject]];
                 }
             }
             [_tableView reloadData];
@@ -393,6 +405,8 @@
     if (section == 1) {
         return 1;
     }
+    NSLog(@"_++++=%ld",_travelNotesArray.count);
+
     return _travelNotesArray.count;
 }
 
@@ -443,6 +457,7 @@
         nibsRegistered = YES;
     }
     TeavelNotesViewCell *cell = (TeavelNotesViewCell *)[tableView dequeueReusableCellWithIdentifier:fier];
+    NSLog(@"%@",[_travelNotesArray description]);
     cell.model = _travelNotesArray[indexPath.row];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return  cell;

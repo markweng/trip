@@ -19,6 +19,7 @@
 @protocol HotSpotListModel
 @end
 @interface HotSpotListModel : JSONModel
+@property (copy, nonatomic) NSString *text;
 @property (copy, nonatomic) NSString *index_cover;
 @property (copy, nonatomic) NSString *index_title;
 @property (copy, nonatomic) NSString *view_count;

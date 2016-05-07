@@ -31,6 +31,6 @@
     iconView.clipsToBounds = YES;
     iconView.layer.cornerRadius = iconView.bounds.size.height/2;
     authorNameLabel.text = _model.user.name;
-    nameLabel.text = _model.index_title;
+    nameLabel.text = _model.text;
 }
 @end

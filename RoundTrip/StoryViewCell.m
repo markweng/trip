@@ -47,24 +47,32 @@
     [imageView1 sd_setImageWithURL:[NSURL URLWithString:_elementModel.index_cover] placeholderImage:[UIImage imageNamed:@"doublebrand_defaultImage"]];
     imageView1.clipsToBounds = YES;
     imageView1.layer.cornerRadius = 10;
-    contentLabel1.text = _elementModel.index_title;
+    //contentLabel1.text = _elementModel.index_title;
+    contentLabel1.text = _elementModel.text;
+
     _elementModel = _storyModels[1];
     [imageView2 sd_setImageWithURL:[NSURL URLWithString:_elementModel.index_cover] placeholderImage:[UIImage imageNamed:@"doublebrand_defaultImage"]];
     imageView2.clipsToBounds = YES;
     imageView2.layer.cornerRadius = 10;
-    contentLabel2.text = _elementModel.index_title;
-    
+//    contentLabel2.text = _elementModel.index_title;
+    contentLabel2.text = _elementModel.text;
+
     _elementModel = _storyModels[2];
     [imageView3 sd_setImageWithURL:[NSURL URLWithString:_elementModel.index_cover] placeholderImage:[UIImage imageNamed:@"doublebrand_defaultImage"]];
     imageView3.clipsToBounds = YES;
     imageView3.layer.cornerRadius = 10;
-    contentLabel3.text = _elementModel.index_title;
+//    contentLabel3.text = _elementModel.index_title;
+    contentLabel3.text = _elementModel.text;
+
     
     _elementModel = _storyModels[3];
     [imageView4 sd_setImageWithURL:[NSURL URLWithString:_elementModel.index_cover] placeholderImage:[UIImage imageNamed:@"doublebrand_defaultImage"]];
     imageView4.clipsToBounds = YES;
     imageView4.layer.cornerRadius = 10;
-    contentLabel4.text = _elementModel.index_title;
+//    contentLabel4.text = _elementModel.index_title;
+    
+    contentLabel4.text = _elementModel.text;
+
    
  
     UITapGestureRecognizer * tapRecognizer1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapRecognizerAction:)];

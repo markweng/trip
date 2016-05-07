@@ -18,12 +18,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self createDataSource];
     [self createTableView];
     [self initRequestManager];
     [self initData];
     self.view.backgroundColor = [UIColor whiteColor];
 
 }
+- (void)createDataSource{}
 //createData
 - (void)initData {
     [self loadNetData:NO];

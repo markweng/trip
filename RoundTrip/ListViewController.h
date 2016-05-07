@@ -17,4 +17,5 @@
 - (void)loadNetData:(BOOL)isMore;
 - (void)initData;
 - (void) createRefresh;
+- (void)createDataSource;
 @end

@@ -160,6 +160,7 @@
         UILabel *textLabel = [[UILabel alloc] init];
         CGSize size = [_spotModel.text sizeWithFont:Font maxSize:CGSizeMake(screenWidth() - 2*padding, MAXFLOAT)];
         textLabel.frame = CGRectMake(padding, getMaxY(iconView) + padding, size.width, size.height);
+        textLabel.font = Font;
         textLabel.text = _spotModel.text;
         textLabel.numberOfLines = 0;
         [view addSubview:textLabel];
