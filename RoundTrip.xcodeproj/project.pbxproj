@@ -796,7 +796,7 @@
 				TargetAttributes = {
 					E0248DBF1C2A2CAD0072C548 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = ER9749DQG7;
+						DevelopmentTeam = MRK9X6UDAK;
 					};
 					E0248DD81C2A2CAE0072C548 = {
 						CreatedOnToolsVersion = 7.2;
@@ -1170,7 +1170,7 @@
 				INFOPLIST_FILE = RoundTrip/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.1517.RoundTriper;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wong.RoundTriper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1188,7 +1188,7 @@
 				INFOPLIST_FILE = RoundTrip/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.1517.RoundTriper;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wong.RoundTriper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;

@@ -6,3 +6,4 @@ pod "FMDB"
 pod 'MMDrawerController', '~> 0.5.7'
 pod 'MBProgressHUD', '~> 0.9.2'
 pod “MJRefresh”
+pod 'SDCycleScrollView', '~> 1.64’
