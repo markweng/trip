@@ -46,7 +46,6 @@
     _tableView = [[UITableView alloc] init];
     _tableView.frame = CGRectMake(0, 20, screenWidth()/5*4,screenHeight()-20);
     _tableView.backgroundColor = [UIColor colorWithRed:26/255.0 green:31/255.0 blue:36/255.0 alpha:1.0];
-    _tableView.alpha = 0.8;
     _tableView.dataSource = self;
     _tableView.delegate = self;
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
