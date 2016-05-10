@@ -25,6 +25,7 @@
     self.automaticallyAdjustsScrollViewInsets = YES;
     [self creatScroll];
     [self createGesture];
+    
 }
 
 - (void)creatScroll {

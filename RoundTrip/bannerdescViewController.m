@@ -28,6 +28,7 @@
     _wkWebView.frame = frame;
     [self.view addSubview:_wkWebView];
      NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:_bannerUrl]];
+    NSLog(@"%@",_bannerUrl);
     [_wkWebView loadRequest:request];
 }
 - (void)didReceiveMemoryWarning {

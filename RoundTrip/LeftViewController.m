@@ -15,6 +15,7 @@
 #import <MMDrawerController/MMDrawerController.h>
 #import "FavoriteViewController.h"
 #import "MyCache.h"
+#import "LoginViewController.h"
 
 @interface LeftViewController ()<UITableViewDataSource,UITableViewDelegate>{
     
@@ -54,7 +55,7 @@
 
 - (void)createDataSource {
     _dataArray = [[NSMutableArray alloc] init];
-    NSArray *array = @[@"我的收藏",@"清理缓存",@"免责声明",@"关于我们",@"关闭"];
+    NSArray *array = @[@"我的收藏",@"清理缓存",@"免责声明",@"关于我们",@"登录",@"关闭"];
     [_dataArray addObjectsFromArray:array];
     
 }
@@ -137,10 +138,19 @@
             break;
         case 4:
         {
-            [self.mm_drawerController closeDrawerAnimated:YES completion:nil];
+            LoginViewController *loginVC = [[LoginViewController alloc] init];
+            UINavigationController *NVC = [[UINavigationController alloc] initWithRootViewController:loginVC];
+
+            [self presentViewController:NVC animated:YES completion:^{
+                
+            }];
             
         }
             break;
+            case 5:
+        {
+         [self.mm_drawerController closeDrawerAnimated:YES completion:nil];
+        }
         default:
             break;
     }

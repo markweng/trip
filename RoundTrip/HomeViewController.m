@@ -509,29 +509,6 @@
 
 
 #pragma mark bannerdelegate
-//- (void)TapImageAction:(CGFloat)offset {
-//    BannerdescViewController *dvc = [BannerdescViewController new];
-//    ElementDataModel  *model = [ElementDataModel new];
-//    if (offset == 0.0) {
-//        
-//        model = _elementModel.data[0];
-//        
-//    }else if (offset == 375.0){
-//        
-//        model = _elementModel.data[1];
-//        
-//    }else if (offset == 750.0){
-//        
-//        model = _elementModel.data[2];
-//        
-//    }else if (offset == 1125.0){
-//        
-//        model = _elementModel.data[3];
-//        
-//    }
-//    dvc.bannerUrl = model.html_url;
-//    [self.navigationController pushViewController:dvc animated:YES];
-//}
 - (void)didSelectedBannerPage:(NSInteger)pageIndex {
     
     BannerdescViewController *dvc = [BannerdescViewController new];
@@ -539,9 +516,6 @@
     
     dvc.bannerUrl = model.html_url;
     [self.navigationController pushViewController:dvc animated:YES];
-    
-    
-    
 }
 
 - (void)didReceiveMemoryWarning {

@@ -58,6 +58,16 @@
 		E0248ED61C2AC9C70072C548 /* LeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0248ED51C2AC9C70072C548 /* LeftViewController.m */; };
 		E0248EE01C2AD1590072C548 /* NSString+Commom.m in Sources */ = {isa = PBXBuildFile; fileRef = E0248EDF1C2AD1590072C548 /* NSString+Commom.m */; };
 		E0248EE31C2AD1720072C548 /* UIView+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = E0248EE21C2AD1720072C548 /* UIView+Common.m */; };
+		E024FF281CE0813B0026B87B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E024FF271CE0813B0026B87B /* CoreLocation.framework */; };
+		E024FF2A1CE0814B0026B87B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E024FF291CE0814B0026B87B /* Security.framework */; };
+		E024FF2C1CE0815A0026B87B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E024FF2B1CE0815A0026B87B /* CoreGraphics.framework */; };
+		E024FF2E1CE081640026B87B /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E024FF2D1CE081640026B87B /* MobileCoreServices.framework */; };
+		E024FF301CE081710026B87B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E024FF2F1CE081710026B87B /* CFNetwork.framework */; };
+		E024FF321CE081810026B87B /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E024FF311CE081810026B87B /* CoreTelephony.framework */; };
+		E024FF341CE0818F0026B87B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E024FF331CE0818F0026B87B /* SystemConfiguration.framework */; };
+		E024FF361CE0819C0026B87B /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E024FF351CE0819C0026B87B /* libz.1.2.5.tbd */; };
+		E024FF381CE081B40026B87B /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E024FF371CE081B40026B87B /* libicucore.tbd */; };
+		E024FF3A1CE081C10026B87B /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E024FF391CE081C10026B87B /* libsqlite3.0.tbd */; };
 		E03622BA1C336D2000118FE5 /* MyCache.m in Sources */ = {isa = PBXBuildFile; fileRef = E03622B91C336D2000118FE5 /* MyCache.m */; };
 		E038ED041C2D6DEC0093601B /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E038ED031C2D6DEC0093601B /* HomeViewController.m */; };
 		E038ED071C2D6DFA0093601B /* GuoNeiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E038ED061C2D6DFA0093601B /* GuoNeiViewController.m */; };
@@ -95,7 +105,11 @@
 		E03D96F71C31755E008D3AD3 /* locationIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E03D96F51C31755E008D3AD3 /* locationIcon@2x.png */; };
 		E03D96FA1C322250008D3AD3 /* dateIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = E03D96F81C322250008D3AD3 /* dateIcon.png */; };
 		E03D96FB1C322250008D3AD3 /* dateIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E03D96F91C322250008D3AD3 /* dateIcon@2x.png */; };
+		E054AD101CE0C78300B96DB8 /* ResignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E054AD0E1CE0C78300B96DB8 /* ResignViewController.m */; };
+		E054AD111CE0C78300B96DB8 /* ResignViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E054AD0F1CE0C78300B96DB8 /* ResignViewController.xib */; };
 		E064B7131CDDC24400C413D6 /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E064B7121CDDC24400C413D6 /* back@2x.png */; };
+		E064B7171CDDE22E00C413D6 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E064B7151CDDE22E00C413D6 /* LoginViewController.m */; };
+		E064B7181CDDE22E00C413D6 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E064B7161CDDE22E00C413D6 /* LoginViewController.xib */; };
 		E06C977C1C393CFC002884FE /* PlaceDetailViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E06C977B1C393CFC002884FE /* PlaceDetailViewCell.m */; };
 		E06C977F1C39656C002884FE /* HotPlaceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E06C977E1C39656C002884FE /* HotPlaceCell.m */; };
 		E06C97931C3A5971002884FE /* PlaceTripItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E06C97921C3A5971002884FE /* PlaceTripItemModel.m */; };
@@ -221,6 +235,16 @@
 		E0248EDF1C2AD1590072C548 /* NSString+Commom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Commom.m"; sourceTree = "<group>"; };
 		E0248EE11C2AD1720072C548 /* UIView+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Common.h"; sourceTree = "<group>"; };
 		E0248EE21C2AD1720072C548 /* UIView+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Common.m"; sourceTree = "<group>"; };
+		E024FF271CE0813B0026B87B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		E024FF291CE0814B0026B87B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		E024FF2B1CE0815A0026B87B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		E024FF2D1CE081640026B87B /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		E024FF2F1CE081710026B87B /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		E024FF311CE081810026B87B /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		E024FF331CE0818F0026B87B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		E024FF351CE0819C0026B87B /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
+		E024FF371CE081B40026B87B /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		E024FF391CE081C10026B87B /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		E03622B81C336D2000118FE5 /* MyCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCache.h; sourceTree = "<group>"; };
 		E03622B91C336D2000118FE5 /* MyCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCache.m; sourceTree = "<group>"; };
 		E038ED021C2D6DEC0093601B /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
@@ -282,7 +306,13 @@
 		E03D96F51C31755E008D3AD3 /* locationIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "locationIcon@2x.png"; sourceTree = "<group>"; };
 		E03D96F81C322250008D3AD3 /* dateIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dateIcon.png; sourceTree = "<group>"; };
 		E03D96F91C322250008D3AD3 /* dateIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dateIcon@2x.png"; sourceTree = "<group>"; };
+		E054AD0D1CE0C78300B96DB8 /* ResignViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResignViewController.h; sourceTree = "<group>"; };
+		E054AD0E1CE0C78300B96DB8 /* ResignViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResignViewController.m; sourceTree = "<group>"; };
+		E054AD0F1CE0C78300B96DB8 /* ResignViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResignViewController.xib; sourceTree = "<group>"; };
 		E064B7121CDDC24400C413D6 /* back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@2x.png"; sourceTree = "<group>"; };
+		E064B7141CDDE22E00C413D6 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		E064B7151CDDE22E00C413D6 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		E064B7161CDDE22E00C413D6 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		E06C977A1C393CFC002884FE /* PlaceDetailViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceDetailViewCell.h; sourceTree = "<group>"; };
 		E06C977B1C393CFC002884FE /* PlaceDetailViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceDetailViewCell.m; sourceTree = "<group>"; };
 		E06C977D1C39656C002884FE /* HotPlaceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotPlaceCell.h; sourceTree = "<group>"; };
@@ -345,6 +375,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E024FF3A1CE081C10026B87B /* libsqlite3.0.tbd in Frameworks */,
+				E024FF381CE081B40026B87B /* libicucore.tbd in Frameworks */,
+				E024FF361CE0819C0026B87B /* libz.1.2.5.tbd in Frameworks */,
+				E024FF341CE0818F0026B87B /* SystemConfiguration.framework in Frameworks */,
+				E024FF321CE081810026B87B /* CoreTelephony.framework in Frameworks */,
+				E024FF301CE081710026B87B /* CFNetwork.framework in Frameworks */,
+				E024FF2E1CE081640026B87B /* MobileCoreServices.framework in Frameworks */,
+				E024FF2C1CE0815A0026B87B /* CoreGraphics.framework in Frameworks */,
+				E024FF2A1CE0814B0026B87B /* Security.framework in Frameworks */,
+				E024FF281CE0813B0026B87B /* CoreLocation.framework in Frameworks */,
 				0BC0FBCE449ACC433D998968 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -378,6 +418,16 @@
 		B3D02BDB317621F402E90C61 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E024FF391CE081C10026B87B /* libsqlite3.0.tbd */,
+				E024FF371CE081B40026B87B /* libicucore.tbd */,
+				E024FF351CE0819C0026B87B /* libz.1.2.5.tbd */,
+				E024FF331CE0818F0026B87B /* SystemConfiguration.framework */,
+				E024FF311CE081810026B87B /* CoreTelephony.framework */,
+				E024FF2F1CE081710026B87B /* CFNetwork.framework */,
+				E024FF2D1CE081640026B87B /* MobileCoreServices.framework */,
+				E024FF2B1CE0815A0026B87B /* CoreGraphics.framework */,
+				E024FF291CE0814B0026B87B /* Security.framework */,
+				E024FF271CE0813B0026B87B /* CoreLocation.framework */,
 				2ECB238FEF06413D30160DD3 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -539,6 +589,12 @@
 				E0248ED51C2AC9C70072C548 /* LeftViewController.m */,
 				E007F48E1C3F89140001FC24 /* FavoriteViewController.h */,
 				E007F48F1C3F89140001FC24 /* FavoriteViewController.m */,
+				E064B7141CDDE22E00C413D6 /* LoginViewController.h */,
+				E064B7151CDDE22E00C413D6 /* LoginViewController.m */,
+				E064B7161CDDE22E00C413D6 /* LoginViewController.xib */,
+				E054AD0D1CE0C78300B96DB8 /* ResignViewController.h */,
+				E054AD0E1CE0C78300B96DB8 /* ResignViewController.m */,
+				E054AD0F1CE0C78300B96DB8 /* ResignViewController.xib */,
 				E007F4941C3F91430001FC24 /* StroyCell.h */,
 				E007F4951C3F91430001FC24 /* StroyCell.m */,
 				E007F4961C3F91430001FC24 /* StroyCell.xib */,
@@ -846,6 +902,7 @@
 				E03D96F71C31755E008D3AD3 /* locationIcon@2x.png in Resources */,
 				E007F4CA1C426D3F0001FC24 /* iconfont-iconfontxiangshang1@2x.png in Resources */,
 				E06C97F11C3B6C2B002884FE /* PicCollectionViewCell.xib in Resources */,
+				E064B7181CDDE22E00C413D6 /* LoginViewController.xib in Resources */,
 				E08F89381C3CD4FE001B5388 /* composehuatiinput.png in Resources */,
 				E007F4631C3E3C970001FC24 /* iconfont-like.png in Resources */,
 				E007F49F1C412F2C0001FC24 /* headericon.png in Resources */,
@@ -885,6 +942,7 @@
 				E007F4771C3E8BA50001FC24 /* iconfont-gangaotai.png in Resources */,
 				E0248DCE1C2A2CAD0072C548 /* Main.storyboard in Resources */,
 				E03D96F31C317506008D3AD3 /* blueClock@2x.png in Resources */,
+				E054AD111CE0C78300B96DB8 /* ResignViewController.xib in Resources */,
 				E007F4781C3E8BA50001FC24 /* iconfont-gangaotai@2x.png in Resources */,
 				E007F4CE1C426D5C0001FC24 /* iconfont-iconfontxiazai@2x.png in Resources */,
 				E007F4C91C426D3F0001FC24 /* iconfont-iconfontxiangshang1.png in Resources */,
@@ -986,8 +1044,10 @@
 				E06C977F1C39656C002884FE /* HotPlaceCell.m in Sources */,
 				E038ED101C2E185D0093601B /* HomeDataModel.m in Sources */,
 				E06C97F41C3B6E79002884FE /* PicModel.m in Sources */,
+				E064B7171CDDE22E00C413D6 /* LoginViewController.m in Sources */,
 				E06C97A01C3A6AD9002884FE /* GangAotaiControllerViewController.m in Sources */,
 				E03D96401C2EBCC1008D3AD3 /* BannerViewCell.m in Sources */,
+				E054AD101CE0C78300B96DB8 /* ResignViewController.m in Sources */,
 				E03D96611C2FDC4D008D3AD3 /* StoryDetailViewController.m in Sources */,
 				E0D672F71C3764ED00A30DFF /* SearchMoreModel.m in Sources */,
 				E0BC120A1C34C54D0095A906 /* SearchViewController.m in Sources */,
@@ -1171,6 +1231,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = RoundTrip/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1189,6 +1250,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = RoundTrip/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

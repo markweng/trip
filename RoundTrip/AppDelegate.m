@@ -13,8 +13,8 @@
 #import "HomeViewController.h"
 #import "GuoNeiViewController.h"
 #import "GuoWaiViewController.h"
-
-
+#import <BmobSDK/Bmob.h>
+#define BMOB_KEY @"f8eed535e2a4a992bffd01ad503d65f6"
 @interface AppDelegate ()
 
 @end
@@ -23,8 +23,9 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  // [NSThread sleepForTimeInterval:3.0];
-    
+   [NSThread sleepForTimeInterval:3.0];
+   [Bmob registerWithAppKey:BMOB_KEY];
+
     //设置所有状态栏的颜色
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     //设置启动页状态了隐藏
