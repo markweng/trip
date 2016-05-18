@@ -26,7 +26,7 @@
                         <constraint firstAttribute="height" constant="30" id="wn7-8U-lYy"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                 </textField>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="skK-w2-hDg">
                     <rect key="frame" x="247" y="204" width="186" height="30"/>
@@ -112,6 +112,17 @@
                         <action selector="resignAction:" destination="-1" eventType="touchUpInside" id="Tpd-wz-OoM"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hnG-jm-pIp">
+                    <rect key="frame" x="265" y="360" width="70" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="2Cg-Ou-qrU"/>
+                        <constraint firstAttribute="width" constant="70" id="4bK-tf-fLG"/>
+                    </constraints>
+                    <state key="normal" title="上传图像"/>
+                    <connections>
+                        <action selector="upLoadIcon:" destination="-1" eventType="touchUpInside" id="OJf-ot-NCb"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -121,6 +132,7 @@
                 <constraint firstItem="0xb-ZY-Ug6" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="B6h-0L-qgc"/>
                 <constraint firstItem="4cy-7Z-YBJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="155" id="BUZ-eY-NKD"/>
                 <constraint firstItem="us0-Xm-0nu" firstAttribute="leading" secondItem="4cy-7Z-YBJ" secondAttribute="trailing" constant="38" id="Bzk-GW-Lqg"/>
+                <constraint firstItem="hnG-jm-pIp" firstAttribute="top" secondItem="hYr-3N-7xT" secondAttribute="bottom" constant="55" id="CDL-1J-ODn"/>
                 <constraint firstItem="skK-w2-hDg" firstAttribute="top" secondItem="xtL-VL-AyL" secondAttribute="bottom" constant="10.5" id="CEA-tX-Pkk"/>
                 <constraint firstItem="Fio-MU-0zM" firstAttribute="top" secondItem="xtL-VL-AyL" secondAttribute="bottom" constant="10.5" id="DeV-KU-Chr"/>
                 <constraint firstItem="ziw-rw-ExD" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="K0s-ib-5GX"/>
@@ -129,6 +141,7 @@
                 <constraint firstItem="hYr-3N-7xT" firstAttribute="top" secondItem="OCw-kh-CSL" secondAttribute="bottom" constant="32.5" id="RI3-Lo-ITb"/>
                 <constraint firstItem="0xb-ZY-Ug6" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="61" id="fcT-d6-2bh"/>
                 <constraint firstItem="hYr-3N-7xT" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="hbS-na-fBQ"/>
+                <constraint firstItem="hnG-jm-pIp" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="k16-Ol-gJz"/>
                 <constraint firstItem="Fio-MU-0zM" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="-112" id="kph-Sv-eIs"/>
                 <constraint firstItem="xtL-VL-AyL" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="s8U-MZ-fZt"/>
                 <constraint firstItem="xtL-VL-AyL" firstAttribute="top" secondItem="4cy-7Z-YBJ" secondAttribute="bottom" constant="8" id="tQ5-Aa-hny"/>

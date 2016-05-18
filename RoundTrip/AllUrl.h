@@ -21,4 +21,8 @@
 #define WANTPLACEURL @"http://api.breadtrip.com/destination/v3/?last_modified_since=0"
 
 #define PICTURL @"http://api.breadtrip.com/destination/place%@photos/?start=%lu&count=21&gallery_mode=true"
+
+#define APP_WALL_PAPER @"https://coding.net/api/wallpaper/wallpapers?"
+#define mainScreenW ([UIScreen mainScreen].bounds.size.width)
+#define mainScreenH ([UIScreen mainScreen].bounds.size.height)
 #endif /* AllUrl_h */

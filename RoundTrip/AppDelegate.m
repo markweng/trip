@@ -14,6 +14,8 @@
 #import "GuoNeiViewController.h"
 #import "GuoWaiViewController.h"
 #import <BmobSDK/Bmob.h>
+#import "MyNetWorking.h"
+
 #define BMOB_KEY @"f8eed535e2a4a992bffd01ad503d65f6"
 @interface AppDelegate ()
 
@@ -30,6 +32,9 @@
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     //设置启动页状态了隐藏
     [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];
+    //设置网络状态监测
+    [[MyNetWorking shareNet] setReachabilityMonitor];
+
     _homeViewController = [[HomeViewController alloc] init];
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:_homeViewController];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -45,6 +50,7 @@
     drawerController.openDrawerGestureModeMask = MMCloseDrawerGestureModeNone;
     // 设置关闭抽屉的手势
     drawerController.closeDrawerGestureModeMask = MMCloseDrawerGestureModePanningCenterView|MMCloseDrawerGestureModePanningDrawerView;
+    
     self.window.rootViewController = drawerController;
     [self.window makeKeyAndVisible];
     return YES;

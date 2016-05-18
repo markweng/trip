@@ -39,7 +39,7 @@
     _titleLabel = [[UILabel alloc] init];
     _titleLabel.frame = CGRectMake(44, 24, screenWidth() - 88, 40);
     _titleLabel.font = [UIFont fontWithName:@"Helvetica" size:20];
-    self.titleLabel.text = _titleString;
+    //self.titleLabel.text = _titleString;
     _titleLabel.textColor = [UIColor whiteColor];
     _titleLabel.textAlignment = NSTextAlignmentCenter;
     [view addSubview:_titleLabel];
@@ -49,6 +49,12 @@
 
    self.navigationController.navigationBar.alpha = 0;
  
+}
+- (void)setTitleString:(NSString *)titleString {
+
+    _titleString = titleString;
+    _titleLabel.text = _titleString;
+
 }
 - (void)backAction {
     [self.navigationController popViewControllerAnimated:YES];

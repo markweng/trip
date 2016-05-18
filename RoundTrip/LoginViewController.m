@@ -10,6 +10,7 @@
 #import <UIImageView+WebCache.h>
 #import <BmobSDK/Bmob.h>
 #import "ResignViewController.h"
+#import "SignUpTableViewController.h"
 
 @interface LoginViewController () {
 
@@ -30,42 +31,68 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setResignBolder];
-   [self.navigationController setNavigationBarHidden:YES];
+    [self.navigationController setNavigationBarHidden:YES];
 
-    [_iconImg sd_setImageWithURL:[NSURL URLWithString:@"http://www.uimaker.com/uploads/allimg/110427/1_110427061433_14.jpg"] placeholderImage:[UIImage imageNamed:@"UMS_facebook_icon"]];
+
 }
 - (IBAction)loginAction:(id)sender {
+    
+    
     [BmobUser loginWithUsernameInBackground:UserNameTextField.text password:PsdTextField.text block:^(BmobUser *user, NSError *error) {
         if (error) {
             NSLog(@"%@",[error description]);
         } else {
-        
+            
             NSLog(@"%@",[user description]);
-
-        
+//            UIAlertView *tip = [[UIAlertView alloc] initWithTitle:nil message:@"登录成功" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+//            [tip show];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"LOGINSUCCESS" object:nil];
+            [self dismissViewControllerAnimated:self completion:^{
+                
+            }];
         }
     }];
 
 }
 - (IBAction)resignAction:(id)sender {
     
+//    ResignViewController  *resignVC = [[ResignViewController alloc] init];
+//    
+//   [self.navigationController pushViewController:resignVC animated:YES];
     
-//    BmobObject *userInfo = [BmobObject objectWithClassName:@"User"];
-//    [userInfo setObject:UserNameTextField.text forKey:@"userName"];
-//
-//    [userInfo setObject:PsdTextField.text forKey:@"passWord"];
-//    //    [userInfo setObject:@78 forKey:@"score"];
-//    //    [userInfo setObject:[NSNumber numberWithBool:YES] forKey:@"cheatMode"];
-//    [userInfo saveInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
-//        NSLog(@"%@",[error description]);
-// 
-//    }];
-   //  BmobUser signOrLoginInbackgroundWithMobilePhoneNumber:UserNameTextField.text SMSCode:PsdTextField.text andPassword:<#(NSString *)#> block:<#^(BmobUser *user, NSError *error)block#>
-    ResignViewController  *resignVC = [[ResignViewController alloc] init];
-    
-   [self.navigationController pushViewController:resignVC animated:YES];
+    UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    SignUpTableViewController *signUp = [mainStoryboard instantiateViewControllerWithIdentifier:@"SignUpTableViewController"];
+  
+    [self.navigationController pushViewController:signUp animated:YES];
 
 }
+- (IBAction)upLoadIcon:(id)sender {
+    
+    BmobUser *bUser = [BmobUser getCurrentUser];
+//    [bUser updateInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
+//        NSLog(@"error %@",[error description]);
+//    }];
+    NSBundle    *bundle = [NSBundle mainBundle];
+    NSString *fileString = [NSString stringWithFormat:@"%@/MyIcon.jpg" ,[bundle bundlePath] ];
+    BmobFile *file1 = [[BmobFile alloc] initWithFilePath:fileString];
+    [file1 saveInBackground:^(BOOL isSuccessful, NSError *error) {
+        //如果文件保存成功，则把文件添加到usericon列
+        if (isSuccessful) {
+            [bUser setObject:file1  forKey:@"usericon"];
+            [bUser updateInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
+                NSLog(@"error %@",[error description]);
+            }];
+            
+            //打印file文件的url地址
+        [_iconImg sd_setImageWithURL:[NSURL URLWithString:file1.url] placeholderImage:[UIImage imageNamed:@"UMS_facebook_icon"]];
+            NSLog(@"file1 url %@",file1.url);
+        }else{
+            //进行处理
+        }
+    }];
+
+}
+
 - (void)setResignBolder {
   
     resign.layer.borderWidth = 0.5;

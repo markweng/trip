@@ -9,7 +9,12 @@
 #import "InfoTableViewCell.h"
 #import "UIView+Common.h"
 #import "NSString+Commom.h"
-@implementation InfoTableViewCell
+@implementation InfoTableViewCell {
+
+
+
+
+}
 
 - (void)awakeFromNib {
     // Initialization code

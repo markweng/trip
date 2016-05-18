@@ -39,10 +39,10 @@
 - (IBAction)getSMSCode:(id)sender {
     __weak typeof(self)  weakSelf = self;
     //请求验证码
-    [BmobSMS requestSMSCodeInBackgroundWithPhoneNumber:_niChengTextfield.text andTemplate:@"test" resultBlock:^(int number, NSError *error) {
+    [BmobSMS requestSMSCodeInBackgroundWithPhoneNumber:_niChengTextfield.text andTemplate:@"release" resultBlock:^(int number, NSError *error) {
         if (error) {
             NSLog(@"%@",error);
-            UIAlertView *tip = [[UIAlertView alloc] initWithTitle:nil message:@"请输入正确的手机号码" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+            UIAlertView *tip = [[UIAlertView alloc] initWithTitle:nil message:[error description] delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
             [tip show];
         } else {
             //获得smsID

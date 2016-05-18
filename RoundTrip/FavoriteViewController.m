@@ -26,10 +26,11 @@
 @implementation FavoriteViewController
 
 - (void)viewDidLoad {
-    self.titleString = @"我的收藏";
     [super viewDidLoad];
     [self createTableView];
     [self createDataSource];
+    self.titleString = @"我的收藏";
+
 }
 
 - (void)createLabel {

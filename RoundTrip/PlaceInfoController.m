@@ -176,11 +176,7 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     } else {
-        NSString *cellReuseIdentifier   = @"fier";
-        InfoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellReuseIdentifier];
-        if (!cell) {
-            cell = [[InfoTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellReuseIdentifier];
-        }
+        InfoTableViewCell *cell = [[InfoTableViewCell alloc] init];
         cell.infoArray = _dataArray[indexPath.row];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
