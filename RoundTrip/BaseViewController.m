@@ -51,9 +51,11 @@
  
 }
 - (void)setTitleString:(NSString *)titleString {
-
+    
     _titleString = titleString;
+    
     _titleLabel.text = _titleString;
+    NSLog(@"title%@",_titleLabel);
 
 }
 - (void)backAction {

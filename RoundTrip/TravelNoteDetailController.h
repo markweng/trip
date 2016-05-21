@@ -8,7 +8,7 @@
 
 #import "BaseViewController.h"
 
-@class ItemModel;
+@class ElementDataModel;
 @interface TravelNoteDetailController : BaseViewController
-@property (nonatomic, strong) ItemModel *model;
+@property (nonatomic, strong) ElementDataModel *model;
 @end

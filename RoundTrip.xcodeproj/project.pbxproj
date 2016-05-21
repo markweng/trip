@@ -48,6 +48,8 @@
 		E007F4CA1C426D3F0001FC24 /* iconfont-iconfontxiangshang1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E007F4C81C426D3F0001FC24 /* iconfont-iconfontxiangshang1@2x.png */; };
 		E007F4CD1C426D5C0001FC24 /* iconfont-iconfontxiazai.png in Resources */ = {isa = PBXBuildFile; fileRef = E007F4CB1C426D5C0001FC24 /* iconfont-iconfontxiazai.png */; };
 		E007F4CE1C426D5C0001FC24 /* iconfont-iconfontxiazai@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E007F4CC1C426D5C0001FC24 /* iconfont-iconfontxiazai@2x.png */; };
+		E00EFF111CED5EE9009BDF18 /* GiFHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = E00EFF101CED5EE9009BDF18 /* GiFHUD.m */; };
+		E00EFF131CED5F17009BDF18 /* loading@3x.gif in Resources */ = {isa = PBXBuildFile; fileRef = E00EFF121CED5F17009BDF18 /* loading@3x.gif */; };
 		E0248DC51C2A2CAD0072C548 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E0248DC41C2A2CAD0072C548 /* main.m */; };
 		E0248DC81C2A2CAD0072C548 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E0248DC71C2A2CAD0072C548 /* AppDelegate.m */; };
 		E0248DCB1C2A2CAD0072C548 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0248DCA1C2A2CAD0072C548 /* ViewController.m */; };
@@ -68,6 +70,7 @@
 		E024FF361CE0819C0026B87B /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E024FF351CE0819C0026B87B /* libz.1.2.5.tbd */; };
 		E024FF381CE081B40026B87B /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E024FF371CE081B40026B87B /* libicucore.tbd */; };
 		E024FF3A1CE081C10026B87B /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E024FF391CE081C10026B87B /* libsqlite3.0.tbd */; };
+		E02E307D1CEFF3EF007EC10B /* QQ20160520-0@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E02E307C1CEFF3EF007EC10B /* QQ20160520-0@2x.png */; };
 		E03622BA1C336D2000118FE5 /* MyCache.m in Sources */ = {isa = PBXBuildFile; fileRef = E03622B91C336D2000118FE5 /* MyCache.m */; };
 		E038ED041C2D6DEC0093601B /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E038ED031C2D6DEC0093601B /* HomeViewController.m */; };
 		E038ED071C2D6DFA0093601B /* GuoNeiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E038ED061C2D6DFA0093601B /* GuoNeiViewController.m */; };
@@ -116,6 +119,8 @@
 		E05BC8CE1CE168950072EC1C /* StatementViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E05BC8CC1CE168950072EC1C /* StatementViewController.xib */; };
 		E05BC8D01CE16EA30072EC1C /* MyIcon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E05BC8CF1CE16EA30072EC1C /* MyIcon.jpg */; };
 		E05BC8D31CE1A4AF0072EC1C /* LoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E05BC8D21CE1A4AF0072EC1C /* LoginModel.m */; };
+		E05E2A581CEEBE390078C1FC /* share1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E05E2A561CEEBE390078C1FC /* share1@2x.png */; };
+		E05E2A591CEEBE390078C1FC /* share1.png in Resources */ = {isa = PBXBuildFile; fileRef = E05E2A571CEEBE390078C1FC /* share1.png */; };
 		E05F06BD1CE6C6A90035BBA8 /* DeclareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E05F06BB1CE6C6A90035BBA8 /* DeclareViewController.m */; };
 		E05F06BE1CE6C6A90035BBA8 /* DeclareViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E05F06BC1CE6C6A90035BBA8 /* DeclareViewController.xib */; };
 		E064B7131CDDC24400C413D6 /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E064B7121CDDC24400C413D6 /* back@2x.png */; };
@@ -225,6 +230,9 @@
 		E007F4C81C426D3F0001FC24 /* iconfont-iconfontxiangshang1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconfont-iconfontxiangshang1@2x.png"; sourceTree = "<group>"; };
 		E007F4CB1C426D5C0001FC24 /* iconfont-iconfontxiazai.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconfont-iconfontxiazai.png"; sourceTree = "<group>"; };
 		E007F4CC1C426D5C0001FC24 /* iconfont-iconfontxiazai@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconfont-iconfontxiazai@2x.png"; sourceTree = "<group>"; };
+		E00EFF0F1CED5EE9009BDF18 /* GiFHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GiFHUD.h; sourceTree = "<group>"; };
+		E00EFF101CED5EE9009BDF18 /* GiFHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GiFHUD.m; sourceTree = "<group>"; };
+		E00EFF121CED5F17009BDF18 /* loading@3x.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "loading@3x.gif"; sourceTree = "<group>"; };
 		E0248DC01C2A2CAD0072C548 /* RoundTrip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoundTrip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0248DC41C2A2CAD0072C548 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E0248DC61C2A2CAD0072C548 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -257,6 +265,7 @@
 		E024FF351CE0819C0026B87B /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
 		E024FF371CE081B40026B87B /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		E024FF391CE081C10026B87B /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		E02E307C1CEFF3EF007EC10B /* QQ20160520-0@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "QQ20160520-0@2x.png"; sourceTree = "<group>"; };
 		E03622B81C336D2000118FE5 /* MyCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCache.h; sourceTree = "<group>"; };
 		E03622B91C336D2000118FE5 /* MyCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCache.m; sourceTree = "<group>"; };
 		E038ED021C2D6DEC0093601B /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
@@ -335,6 +344,8 @@
 		E05BC8CF1CE16EA30072EC1C /* MyIcon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MyIcon.jpg; sourceTree = "<group>"; };
 		E05BC8D11CE1A4AF0072EC1C /* LoginModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginModel.h; sourceTree = "<group>"; };
 		E05BC8D21CE1A4AF0072EC1C /* LoginModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginModel.m; sourceTree = "<group>"; };
+		E05E2A561CEEBE390078C1FC /* share1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "share1@2x.png"; sourceTree = "<group>"; };
+		E05E2A571CEEBE390078C1FC /* share1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share1.png; sourceTree = "<group>"; };
 		E05F06BA1CE6C6A90035BBA8 /* DeclareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeclareViewController.h; sourceTree = "<group>"; };
 		E05F06BB1CE6C6A90035BBA8 /* DeclareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeclareViewController.m; sourceTree = "<group>"; };
 		E05F06BC1CE6C6A90035BBA8 /* DeclareViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeclareViewController.xib; sourceTree = "<group>"; };
@@ -531,6 +542,10 @@
 				E03D96861C30E4E8008D3AD3 /* clock_image@2x.png */,
 				E03D967C1C302F7F008D3AD3 /* brand_defaultImage@2x.png */,
 				E03D96521C2F8038008D3AD3 /* doublebrand_defaultImage@2x.png */,
+				E00EFF121CED5F17009BDF18 /* loading@3x.gif */,
+				E05E2A561CEEBE390078C1FC /* share1@2x.png */,
+				E05E2A571CEEBE390078C1FC /* share1.png */,
+				E02E307C1CEFF3EF007EC10B /* QQ20160520-0@2x.png */,
 			);
 			name = imageFiles;
 			sourceTree = "<group>";
@@ -662,6 +677,8 @@
 				E007F4A51C41FDDA0001FC24 /* UIViewController+UIViewController_MyPop.h */,
 				E007F4A61C41FDDA0001FC24 /* UIViewController+UIViewController_MyPop.m */,
 				E007F4AA1C42004C0001FC24 /* MyPopHeaders.h */,
+				E00EFF0F1CED5EE9009BDF18 /* GiFHUD.h */,
+				E00EFF101CED5EE9009BDF18 /* GiFHUD.m */,
 			);
 			name = CategaryFiles;
 			sourceTree = "<group>";
@@ -677,8 +694,8 @@
 				E03D96631C2FEDB5008D3AD3 /* MoreStoryViewController.m */,
 				E03D965F1C2FDC4D008D3AD3 /* StoryDetailViewController.h */,
 				E03D96601C2FDC4D008D3AD3 /* StoryDetailViewController.m */,
-				E007F4B81C422F370001FC24 /* TravelNoteDetailController.m */,
 				E03D96D51C3133C3008D3AD3 /* TravelNoteDetailController.h */,
+				E007F4B81C422F370001FC24 /* TravelNoteDetailController.m */,
 				E0BC12081C34C54D0095A906 /* SearchViewController.h */,
 				E0BC12091C34C54D0095A906 /* SearchViewController.m */,
 				E0D673031C37B25000A30DFF /* SearchMoreTripsControllerViewController.h */,
@@ -967,6 +984,7 @@
 				E03D96871C30E4E8008D3AD3 /* clock_image@2x.png in Resources */,
 				E007F47D1C3E8EB80001FC24 /* iconfont-chujingyoutu.png in Resources */,
 				E03D96F71C31755E008D3AD3 /* locationIcon@2x.png in Resources */,
+				E00EFF131CED5F17009BDF18 /* loading@3x.gif in Resources */,
 				E007F4CA1C426D3F0001FC24 /* iconfont-iconfontxiangshang1@2x.png in Resources */,
 				E06C97F11C3B6C2B002884FE /* PicCollectionViewCell.xib in Resources */,
 				E064B7181CDDE22E00C413D6 /* LoginViewController.xib in Resources */,
@@ -979,6 +997,7 @@
 				E06C97E91C3B61DE002884FE /* pictureIcon.png in Resources */,
 				E03D96531C2F8039008D3AD3 /* doublebrand_defaultImage@2x.png in Resources */,
 				E007F4861C3EA4820001FC24 /* iconfont-iconfontlike@2x.png in Resources */,
+				E05E2A581CEEBE390078C1FC /* share1@2x.png in Resources */,
 				E007F4C51C426D220001FC24 /* iconfont-iconfontjubao.png in Resources */,
 				E03D96511C2ED44E008D3AD3 /* StoryViewCell.xib in Resources */,
 				E007F46A1C3E3F0E0001FC24 /* iconfont-like@2x.png in Resources */,
@@ -995,6 +1014,8 @@
 				E007F4981C3F91430001FC24 /* StroyCell.xib in Resources */,
 				E0D672FC1C37A5A000A30DFF /* SearchTravelNotesCell.xib in Resources */,
 				E06C979B1C3A5C0A002884FE /* PlaceNotesCell.xib in Resources */,
+				E02E307D1CEFF3EF007EC10B /* QQ20160520-0@2x.png in Resources */,
+				E05E2A591CEEBE390078C1FC /* share1.png in Resources */,
 				E007F4681C3E3D800001FC24 /* iconfont-liulanliang@2x.png in Resources */,
 				E08F89391C3CD4FE001B5388 /* composehuatiinput@2x.png in Resources */,
 				E05653101CE35CD000E95B68 /* user.png in Resources */,
@@ -1132,6 +1153,7 @@
 				E03D96501C2ED44E008D3AD3 /* StoryViewCell.m in Sources */,
 				E03D96CE1C3126B8008D3AD3 /* TravelNotesModel.m in Sources */,
 				E007F48D1C3EAC150001FC24 /* DBManager.m in Sources */,
+				E00EFF111CED5EE9009BDF18 /* GiFHUD.m in Sources */,
 				E038ED041C2D6DEC0093601B /* HomeViewController.m in Sources */,
 				E007F4A71C41FDDA0001FC24 /* UIViewController+UIViewController_MyPop.m in Sources */,
 				E03D96E81C315EB6008D3AD3 /* TravelNotesCell.m in Sources */,

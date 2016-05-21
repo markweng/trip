@@ -11,4 +11,5 @@
 @class HotSpotListModel;
 @interface StoryDetailViewController : BaseViewController
 @property (nonatomic, strong) HotSpotListModel *model;
+@property (nonatomic, strong) UIImage *shareImage;
 @end

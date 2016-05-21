@@ -19,8 +19,10 @@
 #import "DBManager.h"
 #import "ListStoryModel.h"
 #import "ScrollViewController.h"
+#import "UMSocial.h"
+
 #define Font [UIFont systemFontOfSize:20]
-@interface StoryDetailViewController ()<UITableViewDataSource,UITableViewDelegate>{
+@interface StoryDetailViewController ()<UITableViewDataSource, UITableViewDelegate, UMSocialUIDelegate>{
     
     NSMutableArray *_dataSourceArray;
     UITableView *_tableView;
@@ -34,16 +36,18 @@
 @implementation StoryDetailViewController
 
 - (void)viewDidLoad {
-    self.titleString = @"故事详情";
     [super viewDidLoad];
+    self.titleString = @"故事详情";
+
     _dataSourceArray = [NSMutableArray new];
     self.automaticallyAdjustsScrollViewInsets = NO;
-    [self createLikeButton];
+    [self createRightButton];
     [self createTableView];
     [self loadDataFormNet];
 }
 
-- (void)createLikeButton {
+- (void)createRightButton {
+    
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.frame = CGRectMake(screenWidth() - 40, 30, 24, 24);
@@ -51,6 +55,21 @@
     [self setFavouriteButton:button isFavourete:isExistRecord];
     [button addTarget:self action:@selector(likeAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button];
+    
+    UIButton *shareButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    shareButton.frame = CGRectMake(screenWidth() - 80, 28, 28, 28);
+    [shareButton addTarget:self action:@selector(shareAction) forControlEvents:UIControlEventTouchUpInside];
+    [shareButton setImage:[UIImage imageNamed:@"share1"] forState:UIControlStateNormal];
+    [self.view addSubview:shareButton];
+    
+    __weak typeof(self) weakSelf = self;
+    [[SDWebImageManager sharedManager] downloadImageWithURL:[NSURL URLWithString:self.model.index_cover] options:SDWebImageRefreshCached progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+        
+    } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+        weakSelf.shareImage = image;
+    }];
+
+    
 }
 - (void)setFavouriteButton:(UIButton *)button isFavourete:(BOOL)isFavourete {
     
@@ -58,6 +77,29 @@
     UIImage *noFavoriteImage =  [UIImage imageNamed:@"iconfont-dianzan"];
     [button setImage:isFavourete?favoriteImage:noFavoriteImage forState:UIControlStateNormal];
     
+}
+- (void)shareAction {
+    
+    NSString *url = [NSString stringWithFormat:@"http://web.breadtrip.com/%@?",self.model.share_url];
+    NSString *shareText = [NSString stringWithFormat:@"%@ http://web.breadtrip.com/%@?",self.model.text,self.model.share_url];
+    [UMSocialData defaultData].extConfig.title = self.model.text;
+    [UMSocialData defaultData].extConfig.sinaData.urlResource.url = url;
+    [UMSocialData defaultData].extConfig.wechatSessionData.url = url;
+    [UMSocialData defaultData].extConfig.wechatTimelineData.url = url;
+
+    [UMSocialSnsService presentSnsIconSheetView:self appKey:UMENG_SHAREKEY
+    shareText:shareText shareImage:_shareImage shareToSnsNames:@[UMShareToSina,UMShareToQzone,UMShareToEmail,UMShareToSms,UMShareToWechatSession,UMShareToWechatTimeline,UMShareToQQ,UMShareToFacebook,UMShareToTwitter]
+      delegate:self];
+    
+}
+-(void)didFinishGetUMSocialDataInViewController:(UMSocialResponseEntity *)response
+{
+    //根据`responseCode`得到发送结果,如果分享成功
+    if(response.responseCode == UMSResponseCodeSuccess)
+    {
+        //得到分享到的平台名
+        NSLog(@"share to sns name is %@",[[response.data allKeys] objectAtIndex:0]);
+    }
 }
 - (void)likeAction:(UIButton *)button {
     

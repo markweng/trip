@@ -97,12 +97,13 @@
     UIView *view = [tapRecognizer view];
     _elementModel = _storyModels[view.tag - 1000];
     HotSpotListModel *model = [[HotSpotListModel alloc] init];
-
+   
     model.spot_id = _elementModel.spot_id;
     model.index_cover = _elementModel.index_cover;
     model.index_title = _elementModel.index_title;
     model.view_count = _elementModel.view_count;
-    
+    model.share_url = _elementModel.share_url;
+    model.text = _elementModel.text;
     if (_storyItemSelectBlock) {
         _storyItemSelectBlock(model);
     }

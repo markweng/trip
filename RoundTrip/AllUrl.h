@@ -23,6 +23,9 @@
 #define PICTURL @"http://api.breadtrip.com/destination/place%@photos/?start=%lu&count=21&gallery_mode=true"
 
 #define APP_WALL_PAPER @"https://coding.net/api/wallpaper/wallpapers?"
+
+#define UMENG_SHAREKEY @"56924dac67e58eb28e00057d"
+
 #define mainScreenW ([UIScreen mainScreen].bounds.size.width)
 #define mainScreenH ([UIScreen mainScreen].bounds.size.height)
 #endif /* AllUrl_h */

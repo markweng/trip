@@ -24,6 +24,7 @@
 @property (copy, nonatomic) NSString *index_title;
 @property (copy, nonatomic) NSString *view_count;
 @property (copy, nonatomic) NSString *spot_id;
+@property (copy, nonatomic) NSString *share_url;
 @property (nonatomic, strong) UserNameModel<Optional> *user;
 
 @end

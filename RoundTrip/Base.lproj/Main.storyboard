@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
@@ -231,19 +230,9 @@
                                                         <action selector="backAction:" destination="YpQ-H5-eIW" eventType="touchUpInside" id="aYM-Ft-K36"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p9j-4u-3qE">
-                                                    <rect key="frame" x="250" y="24.5" width="100" height="100"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="p9j-4u-3qE" secondAttribute="height" id="JhW-bk-4Lh"/>
-                                                    </constraints>
-                                                    <state key="normal" image="user.png"/>
-                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Abb-gE-IPi" firstAttribute="leading" secondItem="byM-7n-UU2" secondAttribute="leadingMargin" constant="8" id="BVV-Xh-vax"/>
-                                                <constraint firstItem="p9j-4u-3qE" firstAttribute="centerX" secondItem="byM-7n-UU2" secondAttribute="centerX" id="g04-2s-Gag"/>
-                                                <constraint firstItem="p9j-4u-3qE" firstAttribute="centerY" secondItem="byM-7n-UU2" secondAttribute="centerY" id="gHh-GX-0wz"/>
-                                                <constraint firstItem="p9j-4u-3qE" firstAttribute="width" secondItem="byM-7n-UU2" secondAttribute="width" multiplier="1/6" id="nk4-Ji-y3q"/>
                                                 <constraint firstItem="Abb-gE-IPi" firstAttribute="top" secondItem="byM-7n-UU2" secondAttribute="topMargin" constant="2" id="tgv-0S-QmQ"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -369,7 +358,6 @@
                     </tableView>
                     <connections>
                         <outlet property="getCodeBut" destination="YMk-CU-nmM" id="zC1-Cg-Ujh"/>
-                        <outlet property="iconImage" destination="p9j-4u-3qE" id="ytg-51-ZHK"/>
                         <outlet property="phoneNumberTextField" destination="um9-e7-53b" id="laP-3d-wz1"/>
                         <outlet property="psdTextField" destination="FNM-xw-tT3" id="ZHQ-PA-pdE"/>
                         <outlet property="smsCodeTextField" destination="UqO-gT-0Ko" id="1iM-uE-VGo"/>

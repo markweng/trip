@@ -14,24 +14,28 @@
 #import "AllUrl.h"
 #import "UIView+Common.h"
 #import <MBProgressHUD/MBProgressHUD.h>
+#import <UIImageView+WebCache.h>
 #import "HomeDataModel.h"
 #import "PlaceTripItemModel.h"
 #import "DBManager.h"
 #import "ScrollViewController.h"
+#import "UMSocial.h"
 
-@interface TravelNoteDetailController ()<UITableViewDataSource,UITableViewDelegate> {
+@interface TravelNoteDetailController ()<UITableViewDataSource,UITableViewDelegate,UMSocialUIDelegate> {
     UITableView *_tableView;
     NSMutableArray *_groupArray;
     NSMutableArray *_dataArray;
     NSMutableArray *_aryData;
 }
-
+@property (nonatomic, strong) UIImage *shareImage;
 @end
 
 @implementation TravelNoteDetailController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.titleString = @"游记详情";
+
     _dataArray = [NSMutableArray new];
     _groupArray = [NSMutableArray new];
     _aryData = [NSMutableArray new];
@@ -48,7 +52,40 @@
     [self setFavouriteButton:button isFavourete:isExistRecord];
     [button addTarget:self action:@selector(likeAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button];
+    
+    UIButton *shareButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    shareButton.frame = CGRectMake(screenWidth() - 80, 28, 28, 28);
+    [shareButton addTarget:self action:@selector(shareAction) forControlEvents:UIControlEventTouchUpInside];
+    [shareButton setImage:[UIImage imageNamed:@"share1"] forState:UIControlStateNormal];
+    [self.view addSubview:shareButton];
+    
+    __weak typeof(self) weakSelf = self;
+    [[SDWebImageManager sharedManager] downloadImageWithURL:[NSURL URLWithString:self.model.cover_image_default] options:SDWebImageRefreshCached progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+        
+    } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+        weakSelf.shareImage = image;
+    }];
+
+
 }
+- (void)shareAction {
+    
+    NSString *url = [NSString stringWithFormat:@"%@ http://web.breadtrip.com/%@?",self.model.name, self.model.share_url];
+    [UMSocialData defaultData].extConfig.title = self.model.text;
+    [UMSocialData defaultData].urlResource.url = url;
+    [UMSocialData defaultData].extConfig.sinaData.urlResource.url = url;
+    [UMSocialSnsService presentSnsIconSheetView:self appKey:UMENG_SHAREKEY
+     shareText:url shareImage:_shareImage shareToSnsNames:@[UMShareToSina,UMShareToQzone,UMShareToEmail,UMShareToSms,UMShareToWechatSession,UMShareToWechatTimeline,UMShareToQQ,UMShareToFacebook,UMShareToTwitter]
+                                       delegate:self];
+    
+    [[UMSocialDataService defaultDataService]  postSNSWithTypes:@[UMShareToSina] content:@"分享内嵌文字" image:nil location:nil urlResource:nil presentedController:self completion:^(UMSocialResponseEntity *response){
+        if (response.responseCode == UMSResponseCodeSuccess) {
+            NSLog(@"分享成功！");
+        }
+    }];
+    
+}
+
 - (void)setFavouriteButton:(UIButton *)button isFavourete:(BOOL)isFavourete {
     
     UIImage *favoriteImage = [[UIImage imageNamed:@"iconfont-iconfontlike"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];

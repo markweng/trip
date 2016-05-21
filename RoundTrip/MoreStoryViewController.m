@@ -15,6 +15,9 @@
 #import "StoryDetailViewController.h"
 #import <MJRefresh/MJRefresh.h>
 #import <MBProgressHUD/MBProgressHUD.h>
+
+#import "GiFHUD.h"
+
 @interface MoreStoryViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>{
     NSMutableArray *_dataArray;
     UICollectionView *_collectionView;
@@ -25,8 +28,12 @@
 @implementation MoreStoryViewController
 
 - (void)viewDidLoad {
-    self.titleString = @"精选故事";
     [super viewDidLoad];
+
+    self.titleString = [NSString stringWithFormat:@"精彩故事"];
+    
+    [GiFHUD setGifWithImageName:@"loading@3x.gif"];
+
     self.automaticallyAdjustsScrollViewInsets = NO;
     [self createCollectionView];
     _dataArray = [NSMutableArray new];
@@ -51,7 +58,9 @@
 - (void)loadNetData:(BOOL)isMore {
     
     if (!isMore) {
-        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+       // [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        [GiFHUD showWithOverlay];
+
     }
     
     NSString *url  = [NSString stringWithFormat:STORYURL,(unsigned long)_dataArray.count];
@@ -66,16 +75,18 @@
         ListStoryModel  *model = [[ListStoryModel alloc] initWithData:responseObject error:nil];
         
         [_dataArray addObjectsFromArray:model.data.hot_spot_list];
-        
-        [_collectionView.mj_footer endRefreshing];
+                [_collectionView.mj_footer endRefreshing];
         
         [_collectionView reloadData];
         
         if (!isMore) {
-            [MBProgressHUD hideHUDForView:self.view animated:YES];
+           // [MBProgressHUD hideHUDForView:self.view animated:YES];
+            [GiFHUD dismiss];
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        [MBProgressHUD hideHUDForView:self.view animated:YES];
+      //  [MBProgressHUD hideHUDForView:self.view animated:YES];
+        [GiFHUD dismiss];
+
         [_collectionView.mj_footer endRefreshing];
     }];
 }
@@ -113,8 +124,8 @@
 #pragma mark UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     StoryDetailViewController *storyDetailViewController = [[StoryDetailViewController alloc] init];
-    HotSpotListModel *model = _dataArray[indexPath.row];
-    storyDetailViewController.model = model;
+   // HotSpotListModel *model = _dataArray[indexPath.row];
+    storyDetailViewController.model = _dataArray[indexPath.row];
     [self.navigationController pushViewController:storyDetailViewController animated:YES];
 }
 
