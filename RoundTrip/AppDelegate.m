@@ -22,6 +22,7 @@
 
 #import "AllUrl.h"
 #import "GuideViewController.h"
+
 #define BMOB_KEY @"f8eed535e2a4a992bffd01ad503d65f6"
 @interface AppDelegate ()
 
@@ -41,10 +42,11 @@
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     //设置启动页状态了隐藏
     [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];
-    
+    _homeViewController = [[HomeViewController alloc] init];
+
     //引导页
     if(![[NSUserDefaults standardUserDefaults] boolForKey:@"firstLunch"]) {
-    
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appLunch) name:@"guideSuccess" object:nil];
         GuideViewController *guideVC = [[GuideViewController alloc] init];
         
         self.window.rootViewController = guideVC;
@@ -61,11 +63,10 @@
     //设置网络状态监测
     [[MyNetWorking shareNet] setReachabilityMonitor];
     
-    _homeViewController = [[HomeViewController alloc] init];
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:_homeViewController];
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     LeftViewController *leftDrawer = [[LeftViewController alloc] init];
-    
+
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     MMDrawerController  *drawerController = [[MMDrawerController alloc] initWithCenterViewController:navController leftDrawerViewController:leftDrawer];
     CGFloat width = screenWidth();
     // 设置左边视图窗口的大小

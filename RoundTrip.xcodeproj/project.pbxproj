@@ -135,6 +135,25 @@
 		E066DC151CF6A5EF00B2FD4F /* ReSetPsdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E066DC131CF6A5EF00B2FD4F /* ReSetPsdViewController.m */; };
 		E066DC161CF6A5EF00B2FD4F /* ReSetPsdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E066DC141CF6A5EF00B2FD4F /* ReSetPsdViewController.xib */; };
 		E066DC1A1CF6CFEF00B2FD4F /* GuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E066DC191CF6CFEF00B2FD4F /* GuideViewController.m */; };
+		E066DC1F1CF6DD5600B2FD4F /* 游记攻略5.5.png in Resources */ = {isa = PBXBuildFile; fileRef = E066DC1B1CF6DD5600B2FD4F /* 游记攻略5.5.png */; };
+		E066DC201CF6DD5600B2FD4F /* 记录分享5.5.png in Resources */ = {isa = PBXBuildFile; fileRef = E066DC1C1CF6DD5600B2FD4F /* 记录分享5.5.png */; };
+		E066DC211CF6DD5600B2FD4F /* 时光旅行5.5.png in Resources */ = {isa = PBXBuildFile; fileRef = E066DC1D1CF6DD5600B2FD4F /* 时光旅行5.5.png */; };
+		E066DC221CF6DD5600B2FD4F /* 主题路线5.5.png in Resources */ = {isa = PBXBuildFile; fileRef = E066DC1E1CF6DD5600B2FD4F /* 主题路线5.5.png */; };
+		E066DC251CF6DDC100B2FD4F /* SMPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = E066DC241CF6DDC100B2FD4F /* SMPageControl.m */; };
+		E066DC281CF6DE0600B2FD4F /* SDiPhoneVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = E066DC271CF6DE0600B2FD4F /* SDiPhoneVersion.m */; };
+		E066DC2D1CF6E3C500B2FD4F /* 记录分享4.7.png in Resources */ = {isa = PBXBuildFile; fileRef = E066DC291CF6E3C500B2FD4F /* 记录分享4.7.png */; };
+		E066DC2E1CF6E3C500B2FD4F /* 时光旅行4.7.png in Resources */ = {isa = PBXBuildFile; fileRef = E066DC2A1CF6E3C500B2FD4F /* 时光旅行4.7.png */; };
+		E066DC2F1CF6E3C500B2FD4F /* 游记攻略4.7.png in Resources */ = {isa = PBXBuildFile; fileRef = E066DC2B1CF6E3C500B2FD4F /* 游记攻略4.7.png */; };
+		E066DC301CF6E3C500B2FD4F /* 主题路线4.7.png in Resources */ = {isa = PBXBuildFile; fileRef = E066DC2C1CF6E3C500B2FD4F /* 主题路线4.7.png */; };
+		E066DC351CF6E77900B2FD4F /* 主题路线4.png in Resources */ = {isa = PBXBuildFile; fileRef = E066DC311CF6E77900B2FD4F /* 主题路线4.png */; };
+		E066DC361CF6E77900B2FD4F /* 游记攻略4.png in Resources */ = {isa = PBXBuildFile; fileRef = E066DC321CF6E77900B2FD4F /* 游记攻略4.png */; };
+		E066DC371CF6E77900B2FD4F /* 记录分享4.png in Resources */ = {isa = PBXBuildFile; fileRef = E066DC331CF6E77900B2FD4F /* 记录分享4.png */; };
+		E066DC381CF6E77900B2FD4F /* 时光旅行4.png in Resources */ = {isa = PBXBuildFile; fileRef = E066DC341CF6E77900B2FD4F /* 时光旅行4.png */; };
+		E066DC3D1CF6E95100B2FD4F /* 时光旅行3.png in Resources */ = {isa = PBXBuildFile; fileRef = E066DC391CF6E95100B2FD4F /* 时光旅行3.png */; };
+		E066DC3E1CF6E95100B2FD4F /* 主题路线3.png in Resources */ = {isa = PBXBuildFile; fileRef = E066DC3A1CF6E95100B2FD4F /* 主题路线3.png */; };
+		E066DC3F1CF6E95100B2FD4F /* 记录分享3.png in Resources */ = {isa = PBXBuildFile; fileRef = E066DC3B1CF6E95100B2FD4F /* 记录分享3.png */; };
+		E066DC401CF6E95100B2FD4F /* 游记攻略3.png in Resources */ = {isa = PBXBuildFile; fileRef = E066DC3C1CF6E95100B2FD4F /* 游记攻略3.png */; };
+		E066DC431CF6F0A000B2FD4F /* CALayer+Transition.m in Sources */ = {isa = PBXBuildFile; fileRef = E066DC421CF6F0A000B2FD4F /* CALayer+Transition.m */; };
 		E06C977C1C393CFC002884FE /* PlaceDetailViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E06C977B1C393CFC002884FE /* PlaceDetailViewCell.m */; };
 		E06C977F1C39656C002884FE /* HotPlaceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E06C977E1C39656C002884FE /* HotPlaceCell.m */; };
 		E06C97931C3A5971002884FE /* PlaceTripItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E06C97921C3A5971002884FE /* PlaceTripItemModel.m */; };
@@ -377,6 +396,28 @@
 		E066DC141CF6A5EF00B2FD4F /* ReSetPsdViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReSetPsdViewController.xib; sourceTree = "<group>"; };
 		E066DC181CF6CFEF00B2FD4F /* GuideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuideViewController.h; sourceTree = "<group>"; };
 		E066DC191CF6CFEF00B2FD4F /* GuideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuideViewController.m; sourceTree = "<group>"; };
+		E066DC1B1CF6DD5600B2FD4F /* 游记攻略5.5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "游记攻略5.5.png"; sourceTree = "<group>"; };
+		E066DC1C1CF6DD5600B2FD4F /* 记录分享5.5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "记录分享5.5.png"; sourceTree = "<group>"; };
+		E066DC1D1CF6DD5600B2FD4F /* 时光旅行5.5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "时光旅行5.5.png"; sourceTree = "<group>"; };
+		E066DC1E1CF6DD5600B2FD4F /* 主题路线5.5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "主题路线5.5.png"; sourceTree = "<group>"; };
+		E066DC231CF6DDC100B2FD4F /* SMPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMPageControl.h; sourceTree = "<group>"; };
+		E066DC241CF6DDC100B2FD4F /* SMPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMPageControl.m; sourceTree = "<group>"; };
+		E066DC261CF6DE0600B2FD4F /* SDiPhoneVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDiPhoneVersion.h; sourceTree = "<group>"; };
+		E066DC271CF6DE0600B2FD4F /* SDiPhoneVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDiPhoneVersion.m; sourceTree = "<group>"; };
+		E066DC291CF6E3C500B2FD4F /* 记录分享4.7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "记录分享4.7.png"; sourceTree = "<group>"; };
+		E066DC2A1CF6E3C500B2FD4F /* 时光旅行4.7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "时光旅行4.7.png"; sourceTree = "<group>"; };
+		E066DC2B1CF6E3C500B2FD4F /* 游记攻略4.7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "游记攻略4.7.png"; sourceTree = "<group>"; };
+		E066DC2C1CF6E3C500B2FD4F /* 主题路线4.7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "主题路线4.7.png"; sourceTree = "<group>"; };
+		E066DC311CF6E77900B2FD4F /* 主题路线4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "主题路线4.png"; sourceTree = "<group>"; };
+		E066DC321CF6E77900B2FD4F /* 游记攻略4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "游记攻略4.png"; sourceTree = "<group>"; };
+		E066DC331CF6E77900B2FD4F /* 记录分享4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "记录分享4.png"; sourceTree = "<group>"; };
+		E066DC341CF6E77900B2FD4F /* 时光旅行4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "时光旅行4.png"; sourceTree = "<group>"; };
+		E066DC391CF6E95100B2FD4F /* 时光旅行3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "时光旅行3.png"; sourceTree = "<group>"; };
+		E066DC3A1CF6E95100B2FD4F /* 主题路线3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "主题路线3.png"; sourceTree = "<group>"; };
+		E066DC3B1CF6E95100B2FD4F /* 记录分享3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "记录分享3.png"; sourceTree = "<group>"; };
+		E066DC3C1CF6E95100B2FD4F /* 游记攻略3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "游记攻略3.png"; sourceTree = "<group>"; };
+		E066DC411CF6F0A000B2FD4F /* CALayer+Transition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+Transition.h"; sourceTree = "<group>"; };
+		E066DC421CF6F0A000B2FD4F /* CALayer+Transition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+Transition.m"; sourceTree = "<group>"; };
 		E06C977A1C393CFC002884FE /* PlaceDetailViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceDetailViewCell.h; sourceTree = "<group>"; };
 		E06C977B1C393CFC002884FE /* PlaceDetailViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceDetailViewCell.m; sourceTree = "<group>"; };
 		E06C977D1C39656C002884FE /* HotPlaceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotPlaceCell.h; sourceTree = "<group>"; };
@@ -572,6 +613,22 @@
 				E02E307C1CEFF3EF007EC10B /* QQ20160520-0@2x.png */,
 				E016DEAE1CF41E70008CD261 /* disMiss.png */,
 				E016DEAF1CF41E70008CD261 /* disMiss@2x.png */,
+				E066DC1B1CF6DD5600B2FD4F /* 游记攻略5.5.png */,
+				E066DC1C1CF6DD5600B2FD4F /* 记录分享5.5.png */,
+				E066DC1D1CF6DD5600B2FD4F /* 时光旅行5.5.png */,
+				E066DC1E1CF6DD5600B2FD4F /* 主题路线5.5.png */,
+				E066DC291CF6E3C500B2FD4F /* 记录分享4.7.png */,
+				E066DC2A1CF6E3C500B2FD4F /* 时光旅行4.7.png */,
+				E066DC2B1CF6E3C500B2FD4F /* 游记攻略4.7.png */,
+				E066DC2C1CF6E3C500B2FD4F /* 主题路线4.7.png */,
+				E066DC311CF6E77900B2FD4F /* 主题路线4.png */,
+				E066DC321CF6E77900B2FD4F /* 游记攻略4.png */,
+				E066DC331CF6E77900B2FD4F /* 记录分享4.png */,
+				E066DC341CF6E77900B2FD4F /* 时光旅行4.png */,
+				E066DC391CF6E95100B2FD4F /* 时光旅行3.png */,
+				E066DC3A1CF6E95100B2FD4F /* 主题路线3.png */,
+				E066DC3B1CF6E95100B2FD4F /* 记录分享3.png */,
+				E066DC3C1CF6E95100B2FD4F /* 游记攻略3.png */,
 			);
 			name = imageFiles;
 			sourceTree = "<group>";
@@ -837,6 +894,12 @@
 		E054D8C91CE219880001D514 /* NetTools */ = {
 			isa = PBXGroup;
 			children = (
+				E066DC411CF6F0A000B2FD4F /* CALayer+Transition.h */,
+				E066DC421CF6F0A000B2FD4F /* CALayer+Transition.m */,
+				E066DC261CF6DE0600B2FD4F /* SDiPhoneVersion.h */,
+				E066DC271CF6DE0600B2FD4F /* SDiPhoneVersion.m */,
+				E066DC231CF6DDC100B2FD4F /* SMPageControl.h */,
+				E066DC241CF6DDC100B2FD4F /* SMPageControl.m */,
 				E054D8CA1CE219980001D514 /* MyNetWorking.h */,
 				E054D8CB1CE219980001D514 /* MyNetWorking.m */,
 				E054D8CC1CE219980001D514 /* Reachability.h */,
@@ -1029,14 +1092,19 @@
 				E03D96851C30E4B2008D3AD3 /* clock_image.png in Resources */,
 				E007F4791C3E8BA50001FC24 /* iconfont-guoneiremen@2x.png in Resources */,
 				E007F49C1C3FB5940001FC24 /* iconfont-quxiao@2x.png in Resources */,
+				E066DC221CF6DD5600B2FD4F /* 主题路线5.5.png in Resources */,
 				E03D96871C30E4E8008D3AD3 /* clock_image@2x.png in Resources */,
+				E066DC3E1CF6E95100B2FD4F /* 主题路线3.png in Resources */,
 				E007F47D1C3E8EB80001FC24 /* iconfont-chujingyoutu.png in Resources */,
 				E03D96F71C31755E008D3AD3 /* locationIcon@2x.png in Resources */,
 				E00EFF131CED5F17009BDF18 /* loading@3x.gif in Resources */,
 				E007F4CA1C426D3F0001FC24 /* iconfont-iconfontxiangshang1@2x.png in Resources */,
 				E06C97F11C3B6C2B002884FE /* PicCollectionViewCell.xib in Resources */,
+				E066DC371CF6E77900B2FD4F /* 记录分享4.png in Resources */,
 				E064B7181CDDE22E00C413D6 /* LoginViewController.xib in Resources */,
 				E08F89381C3CD4FE001B5388 /* composehuatiinput.png in Resources */,
+				E066DC301CF6E3C500B2FD4F /* 主题路线4.7.png in Resources */,
+				E066DC1F1CF6DD5600B2FD4F /* 游记攻略5.5.png in Resources */,
 				E007F4631C3E3C970001FC24 /* iconfont-like.png in Resources */,
 				E066DC161CF6A5EF00B2FD4F /* ReSetPsdViewController.xib in Resources */,
 				E007F49F1C412F2C0001FC24 /* headericon.png in Resources */,
@@ -1045,6 +1113,7 @@
 				E05F06BE1CE6C6A90035BBA8 /* DeclareViewController.xib in Resources */,
 				E06C97E91C3B61DE002884FE /* pictureIcon.png in Resources */,
 				E03D96531C2F8039008D3AD3 /* doublebrand_defaultImage@2x.png in Resources */,
+				E066DC2E1CF6E3C500B2FD4F /* 时光旅行4.7.png in Resources */,
 				E007F4861C3EA4820001FC24 /* iconfont-iconfontlike@2x.png in Resources */,
 				E016DEB01CF41E70008CD261 /* disMiss.png in Resources */,
 				E05E2A581CEEBE390078C1FC /* share1@2x.png in Resources */,
@@ -1053,11 +1122,13 @@
 				E007F46A1C3E3F0E0001FC24 /* iconfont-like@2x.png in Resources */,
 				E05653111CE35CD000E95B68 /* user@2x.png in Resources */,
 				E03D96ED1C3173EA008D3AD3 /* grayClock.png in Resources */,
+				E066DC361CF6E77900B2FD4F /* 游记攻略4.png in Resources */,
 				E06C97E81C3B61DE002884FE /* pictureIcon@2x.png in Resources */,
 				E007F4521C3D53630001FC24 /* iconfontsearch@2x.png in Resources */,
 				E007F49D1C411ACF0001FC24 /* Assets.xcassets in Resources */,
 				E0248DD31C2A2CAE0072C548 /* LaunchScreen.storyboard in Resources */,
 				E007F4A11C4130940001FC24 /* headericon@2x.png in Resources */,
+				E066DC2F1CF6E3C500B2FD4F /* 游记攻略4.7.png in Resources */,
 				E03D96EF1C317434008D3AD3 /* grayClock@2x.png in Resources */,
 				E08F88E41C3C9EB0001B5388 /* iconfont-more@2x.png in Resources */,
 				E007F4761C3E8BA50001FC24 /* iconfont-chujingyoum@2x.png in Resources */,
@@ -1071,11 +1142,15 @@
 				E08F89391C3CD4FE001B5388 /* composehuatiinput@2x.png in Resources */,
 				E05653101CE35CD000E95B68 /* user.png in Resources */,
 				E007F4851C3EA4820001FC24 /* iconfont-iconfontlike.png in Resources */,
+				E066DC381CF6E77900B2FD4F /* 时光旅行4.png in Resources */,
 				E03D96FB1C322250008D3AD3 /* dateIcon@2x.png in Resources */,
 				E05BC8D01CE16EA30072EC1C /* MyIcon.jpg in Resources */,
+				E066DC401CF6E95100B2FD4F /* 游记攻略3.png in Resources */,
+				E066DC211CF6DD5600B2FD4F /* 时光旅行5.5.png in Resources */,
 				E03D96581C2FA521008D3AD3 /* TeavelNotesViewCell.xib in Resources */,
 				E03D96FA1C322250008D3AD3 /* dateIcon.png in Resources */,
 				E08F88E31C3C9EB0001B5388 /* iconfont-more.png in Resources */,
+				E066DC3D1CF6E95100B2FD4F /* 时光旅行3.png in Resources */,
 				E03D96F11C317503008D3AD3 /* blueClock.png in Resources */,
 				E007F48A1C3EA4DD0001FC24 /* iconfont-dianzan@2x.png in Resources */,
 				E007F45E1C3E39110001FC24 /* iconfontright.png in Resources */,
@@ -1085,9 +1160,11 @@
 				E007F4771C3E8BA50001FC24 /* iconfont-gangaotai.png in Resources */,
 				E0248DCE1C2A2CAD0072C548 /* Main.storyboard in Resources */,
 				E03D96F31C317506008D3AD3 /* blueClock@2x.png in Resources */,
+				E066DC351CF6E77900B2FD4F /* 主题路线4.png in Resources */,
 				E007F4781C3E8BA50001FC24 /* iconfont-gangaotai@2x.png in Resources */,
 				E007F4CE1C426D5C0001FC24 /* iconfont-iconfontxiazai@2x.png in Resources */,
 				E007F4C91C426D3F0001FC24 /* iconfont-iconfontxiangshang1.png in Resources */,
+				E066DC201CF6DD5600B2FD4F /* 记录分享5.5.png in Resources */,
 				E007F4751C3E8BA50001FC24 /* iconfont-chujingyoum.png in Resources */,
 				E007F4511C3D53630001FC24 /* iconfontsearch.png in Resources */,
 				E007F47A1C3E8BA50001FC24 /* iconfont-guoneiremen2.png in Resources */,
@@ -1095,6 +1172,8 @@
 				E08F88D71C3C0DF8001B5388 /* leftIcon.png in Resources */,
 				E007F4891C3EA4DD0001FC24 /* iconfont-dianzan.png in Resources */,
 				E03D966C1C2FFE5A008D3AD3 /* MoreStoryCollectionViewCell.xib in Resources */,
+				E066DC2D1CF6E3C500B2FD4F /* 记录分享4.7.png in Resources */,
+				E066DC3F1CF6E95100B2FD4F /* 记录分享3.png in Resources */,
 				E064B7131CDDC24400C413D6 /* back@2x.png in Resources */,
 				E007F47E1C3E8EB80001FC24 /* iconfont-chujingyoutu@2x.png in Resources */,
 			);
@@ -1170,9 +1249,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E05BC8CD1CE168950072EC1C /* StatementViewController.m in Sources */,
+				E066DC431CF6F0A000B2FD4F /* CALayer+Transition.m in Sources */,
 				E03D96831C30CB4F008D3AD3 /* StoryDetialViewCellFrame.m in Sources */,
 				E08F88D41C3BF005001B5388 /* InfoTableViewCell.m in Sources */,
 				E007F4BC1C4234550001FC24 /* CellScrollView.m in Sources */,
+				E066DC281CF6DE0600B2FD4F /* SDiPhoneVersion.m in Sources */,
 				E06C979A1C3A5C0A002884FE /* PlaceNotesCell.m in Sources */,
 				E038ED0A1C2D6E0B0093601B /* GuoWaiViewController.m in Sources */,
 				E03D965D1C2FDC10008D3AD3 /* BaseViewController.m in Sources */,
@@ -1228,6 +1309,7 @@
 				E03D967B1C301FA6008D3AD3 /* StoryDetailModel.m in Sources */,
 				E06C97931C3A5971002884FE /* PlaceTripItemModel.m in Sources */,
 				E03D96771C301198008D3AD3 /* StoryDetialViewCell.m in Sources */,
+				E066DC251CF6DDC100B2FD4F /* SMPageControl.m in Sources */,
 				E066DC111CF699C900B2FD4F /* UIViewController+Common.m in Sources */,
 				E007F4A41C41FC6A0001FC24 /* UINavigationController+MyPop.m in Sources */,
 				E0BC120D1C34C7610095A906 /* SearchView.m in Sources */,

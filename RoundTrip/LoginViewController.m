@@ -123,6 +123,7 @@
 - (IBAction)forgectPsdAction:(id)sender {
     
     ReSetPsdViewController *reSetPsd = [[ReSetPsdViewController alloc] init];
+    
     [self.navigationController pushViewController:reSetPsd animated:YES];
     
 }
