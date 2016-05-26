@@ -20,6 +20,7 @@
 #import "DBManager.h"
 #import "ScrollViewController.h"
 #import "UMSocial.h"
+#import <BmobSDK/Bmob.h>
 
 @interface TravelNoteDetailController ()<UITableViewDataSource,UITableViewDelegate,UMSocialUIDelegate> {
     UITableView *_tableView;
@@ -70,20 +71,25 @@
 }
 - (void)shareAction {
     
-    NSString *url = [NSString stringWithFormat:@"%@ http://web.breadtrip.com/%@?",self.model.name, self.model.share_url];
+    NSString *url = [NSString stringWithFormat:@"http://web.breadtrip.com/%@?",self.model.share_url];
+    NSString *shareText;
+    if (self.model.text) {
+        shareText = [NSString stringWithFormat:@"%@ http://web.breadtrip.com/%@?",self.model.text,self.model.share_url];
+    } else {
+    
+       shareText = @"来自时光旅行的分享：";
+    
+    }
+    
     [UMSocialData defaultData].extConfig.title = self.model.text;
-    [UMSocialData defaultData].urlResource.url = url;
     [UMSocialData defaultData].extConfig.sinaData.urlResource.url = url;
+    [UMSocialData defaultData].extConfig.wechatSessionData.url = url;
+    [UMSocialData defaultData].extConfig.wechatTimelineData.url = url;
+    [UMSocialData defaultData].extConfig.qzoneData.url = url;
+    [UMSocialData defaultData].extConfig.qqData.url = url;
     [UMSocialSnsService presentSnsIconSheetView:self appKey:UMENG_SHAREKEY
-     shareText:url shareImage:_shareImage shareToSnsNames:@[UMShareToSina,UMShareToQzone,UMShareToEmail,UMShareToSms,UMShareToWechatSession,UMShareToWechatTimeline,UMShareToQQ,UMShareToFacebook,UMShareToTwitter]
+                                      shareText:shareText shareImage:_shareImage shareToSnsNames:@[UMShareToSina,UMShareToQzone,UMShareToEmail,UMShareToSms,UMShareToWechatSession,UMShareToWechatTimeline,UMShareToQQ,UMShareToFacebook,UMShareToTwitter]
                                        delegate:self];
-    
-    [[UMSocialDataService defaultDataService]  postSNSWithTypes:@[UMShareToSina] content:@"分享内嵌文字" image:nil location:nil urlResource:nil presentedController:self completion:^(UMSocialResponseEntity *response){
-        if (response.responseCode == UMSResponseCodeSuccess) {
-            NSLog(@"分享成功！");
-        }
-    }];
-    
 }
 
 - (void)setFavouriteButton:(UIButton *)button isFavourete:(BOOL)isFavourete {
@@ -94,7 +100,12 @@
     
 }
 - (void)likeAction:(UIButton *)button {
-    
+    BmobUser *user = [BmobUser getCurrentUser];
+    if (!user) {
+        [self showHudWithTitle:@"请先登录"];
+        return;
+    }
+
     BOOL isExistRecord = [[DBManager sharedManager] isExistInfoForid:nil tripid:_model.eid];
     if (isExistRecord) {
      [[DBManager sharedManager] deleteModelForTripid:_model.eid];

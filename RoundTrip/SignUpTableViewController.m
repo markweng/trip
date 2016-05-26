@@ -8,9 +8,11 @@
 
 #import "SignUpTableViewController.h"
 #import <BmobSDK/Bmob.h>
+#import "NSString+Commom.h"
 #define BUTTONNORCOLOR [UIColor colorWithRed:31/255.0 green:140/255.0 blue:228/255.0 alpha:1.0]
 
-@interface SignUpTableViewController ()
+@interface SignUpTableViewController ()<UITextFieldDelegate>
+
 @property (weak, nonatomic) IBOutlet UIButton *iconImage;
 @property (weak, nonatomic) IBOutlet UITextField *phoneNumberTextField;
 @property (weak, nonatomic) IBOutlet UITextField *smsCodeTextField;
@@ -26,14 +28,17 @@
 
 @implementation SignUpTableViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.navigationController setNavigationBarHidden:YES];
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    _smsCodeTextField.delegate = self;
+    _psdTextField.secureTextEntry = YES;
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 - (IBAction)backAction:(id)sender {
 
@@ -46,7 +51,7 @@
         return;
     }
     __weak typeof(self) weakSelf = self;
-    [BmobUser signOrLoginInbackgroundWithMobilePhoneNumber:_phoneNumberTextField.text SMSCode:_smsCodeTextField.text andPassword:_psdTextField.text block:^(BmobUser *user, NSError *error) {
+    [BmobUser signOrLoginInbackgroundWithMobilePhoneNumber:_phoneNumberTextField.text SMSCode:_smsCodeTextField.text andPassword:MD5Hash(_psdTextField.text) block:^(BmobUser *user, NSError *error) {
         if (error) {
             NSLog(@"%@",[error description]);
         } else {
@@ -73,7 +78,7 @@
     [BmobSMS requestSMSCodeInBackgroundWithPhoneNumber:_phoneNumberTextField.text andTemplate:@"release" resultBlock:^(int number, NSError *error) {
         if (error) {
             NSLog(@"%@",error);
-            UIAlertView *tip = [[UIAlertView alloc] initWithTitle:nil message:@"请输入正确的手机号码" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+            UIAlertView *tip = [[UIAlertView alloc] initWithTitle:nil message:@"手机号或密码错误" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
             [tip show];
             _getCodeBut.userInteractionEnabled = YES;
 
@@ -84,8 +89,7 @@
             weakSelf.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:weakSelf selector:@selector(timeDece) userInfo:nil repeats:YES];
             _getCodeBut.userInteractionEnabled = NO;
 
-            //设置不可点击
-            // [self setRequestSmsCodeBtnCountDown];
+            
         }
     }];
 
@@ -161,7 +165,21 @@
     }
     
 }
-
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    
+    if ([textField isEqual:_smsCodeTextField]) {
+        NSInteger existedLength = textField.text.length;
+        NSInteger selectedLength = range.length;
+        NSInteger replaceLength = string.length;
+        
+        if (existedLength - selectedLength + replaceLength > 10) {
+            return NO;
+        }
+    }
+    
+    return YES;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -180,6 +198,8 @@
 
       [[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder)to:nil from:nil forEvent:nil];
 }
+
+
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];

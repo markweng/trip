@@ -21,6 +21,8 @@
 @property (nonatomic, copy) NSString *view_count;
 @property (nonatomic, copy) NSString *waypoints;
 @property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString <Optional>*share_url;
+
 @end
 @interface CountryModel : JSONModel
 @property (nonatomic, copy) NSString *name;

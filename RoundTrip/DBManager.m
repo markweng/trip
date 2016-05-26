@@ -9,6 +9,7 @@
 #import "DBManager.h"
 #import "ListStoryModel.h"
 #import "PlaceTripItemModel.h"
+#import <BmobSDK/Bmob.h>
 /*
  数据库
  1.导入 libsqlite3.dylib
@@ -75,6 +76,7 @@
 
 //获取文件在沙盒中的 Documents中的路径
 - (NSString *)getFileFullPathWithFileName:(NSString *)fileName {
+    
     NSString *docPath = [NSHomeDirectory() stringByAppendingFormat:@"/Documents"];
     NSFileManager *fm = [NSFileManager defaultManager];
     if ([fm fileExistsAtPath:docPath]) {
@@ -88,6 +90,7 @@
 }
 
 - (void)insertModel:(id)model {
+    
     HotSpotListModel *hotSpotListModel = (HotSpotListModel *)model;
     if ([self isExistInfoForid:hotSpotListModel.spot_id tripid:nil]) {
         NSLog(@"this app has  recorded");
@@ -95,6 +98,19 @@
     }
     NSString *sql = @"insert into FavoriteStory(index_cover,index_title,view_count,spot_id,type) values (?,?,?,?,?)";
     BOOL isSuccess = [_database executeUpdate:sql,hotSpotListModel.index_cover,hotSpotListModel.index_title,hotSpotListModel.view_count,hotSpotListModel.spot_id,@"story"];
+    
+    BmobUser *bUser = [BmobUser getCurrentUser];
+    [bUser setObject:model forKey:@"storylist"];
+   // [bUser updateInBackground];
+    [bUser updateInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
+        if (isSuccessful) {
+            NSLog(@"%@",[[bUser objectForKey:@"storylist"] description]);
+        }
+        if (error) {
+            NSLog(@"%@",[error description]);
+
+        }
+    }];
     if (!isSuccess) {
         NSLog(@"insert error:%@",_database.lastErrorMessage);
     }

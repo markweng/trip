@@ -11,4 +11,5 @@
 @property (nonatomic, copy) NSString *titleString;
 - (void)customNavigationBar;
 - (void)backAction;
+- (void)showHudWithTitle:(NSString *)title;
 @end

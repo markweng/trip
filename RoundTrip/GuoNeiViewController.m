@@ -28,13 +28,14 @@
 @implementation GuoNeiViewController
 - (void)viewWillAppear:(BOOL)animated {
     [self.navigationController setNavigationBarHidden:YES];
-    NSString *backArrowString = @"返回";
-    UIBarButtonItem *backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:backArrowString style:UIBarButtonItemStylePlain target:nil action:nil];
-    self.navigationItem.backBarButtonItem =  backBarButtonItem;
+//    NSString *backArrowString = @"返回";
+//    UIBarButtonItem *backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:backArrowString style:UIBarButtonItemStylePlain target:nil action:nil];
+//    self.navigationItem.backBarButtonItem =  backBarButtonItem;
 }
 - (void)viewDidLoad {
-    self.titleString = @"大陆城市";
     [super viewDidLoad];
+    self.titleString = @"大陆城市";
+
     _dataArray = [[NSMutableArray alloc] init];
     [self createCollectionView];
     [self loadNetData];

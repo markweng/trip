@@ -10,6 +10,7 @@
 #import <BmobSDK/Bmob.h>
 #import <UIImageView+WebCache.h>
 #import "MBProgressHUD.h"
+#import "UIViewController+Common.h"
 
 @interface UserInfoTableViewController ()  <UIImagePickerControllerDelegate,UINavigationControllerDelegate, UIActionSheetDelegate, UITextFieldDelegate, UIGestureRecognizerDelegate> {
 
@@ -38,17 +39,14 @@
     [self createButtonItem];
     _nickNameTextField.delegate = self;
     _eMialTextField.delegate = self;
-//    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hiddenKeyBoard)];
-//    tapGestureRecognizer.delegate = self;
-//    [_myTableVIew addGestureRecognizer:tapGestureRecognizer];
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+
 }
 - (void)createButtonItem {
-  
-    UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back"] style:UIBarButtonItemStylePlain target:self action:@selector(back)];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:21/255.0 green:153/255.0 blue:225/255.0 alpha:1.0];
+    NSDictionary *dict = @{NSFontAttributeName:[UIFont systemFontOfSize:20],NSForegroundColorAttributeName:[UIColor whiteColor] };
+    [self.navigationController.navigationBar setTitleTextAttributes:dict];
+    UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"back"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(back)];
     self.navigationItem.leftBarButtonItem = leftItem;
     
    _rightItem  = [[UIBarButtonItem alloc] initWithTitle:@"确定" style:UIBarButtonItemStylePlain target:self action:@selector(sureAction)];
@@ -62,36 +60,12 @@
 
 }
 - (void)sureAction {
-    
+    [self hiddenKeyBoard];
     if ([self isEmpty]) {
         return;
     }
     
     BmobUser *bUser = [BmobUser getCurrentUser];
-    
-//    NSBundle    *bundle = [NSBundle mainBundle];
-//    NSString *fileString = [NSString stringWithFormat:@"%@/MyIcon.jpg" ,[bundle bundlePath]];
-//    NSData *data;
-//    if (UIImagePNGRepresentation(image) == nil) {
-//        
-//        data = UIImageJPEGRepresentation(image, 1);
-//        
-//    } else {
-//        
-//        data = UIImagePNGRepresentation(image);
-//    }
-//    bUser.email = _eMialTextField.text;
-//    [bUser setObject:_nickNameTextField.text forKey:@"nickname"];
-//    [bUser setObject:_sex forKey:@"sex"];
-//    [bUser updateInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
-//        if (isSuccessful) {
-//            [self dismissViewControllerAnimated:YES completion:^{
-//                
-//            }];
-//        }
-//        NSLog(@"error %@",[error description]);
-//    }];
-    
     BmobFile *file1 = [[BmobFile alloc] initWithFileName:[NSString stringWithFormat:@"%@%@",_nickNameTextField.text,@".png"] withFileData:UIImagePNGRepresentation(_icon)];
     NSLog(@"%@",[file1 description]);
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
@@ -119,8 +93,7 @@
                 NSLog(@"error %@",[error description]);
             }];
 
-            //打印file文件的url地址
-           // [_iconImage sd_setImageWithURL:[NSURL URLWithString:file1.url] placeholderImage:[UIImage imageNamed:@"UMS_facebook_icon"]];
+          
             NSLog(@"file1 url %@",file1.url);
         }else{
             [MBProgressHUD hideHUDForView:self.view animated:YES];
@@ -216,7 +189,7 @@
             self.sex = @"男";
             
             
-        } else {
+        } else if(buttonIndex == 1) {
         
           self.sex = @"女";
         }
@@ -323,13 +296,21 @@
 
     if (_icon == nil) {
         return YES;
-    } else if (_nickNameTextField.text.length == 0) {
+    }
+    if (_nickNameTextField.text.length == 0) {
     
         return YES;
-    } else if (_eMialTextField.text.length == 0 && [self validateEmail:_eMialTextField.text]) {
+    }
+    if (_eMialTextField.text.length == 0 ) {
     
         return YES;
-    } else if (_sex == nil) {
+    }
+    if (![self validateEmail:_eMialTextField.text]) {
+        
+        [self showHudWithTitle:@"请输入正确的邮箱地址"];
+        return YES;
+    }
+    if (_sex == nil) {
         
         return YES;
 

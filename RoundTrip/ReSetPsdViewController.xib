@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReSetPsdViewController">
+            <connections>
+                <outlet property="agginPsdTFD" destination="rd3-RR-F48" id="rCP-Mh-r6t"/>
+                <outlet property="getCodeBtn" destination="1dd-o9-Wg4" id="g5v-Ok-K2U"/>
+                <outlet property="getCodeBut" destination="1dd-o9-Wg4" id="NBF-Ku-b3H"/>
+                <outlet property="phoneNumTFD" destination="eUi-Cv-eGv" id="lAg-f6-a4K"/>
+                <outlet property="psdTFD" destination="8cF-Nt-88u" id="Jfc-47-TnV"/>
+                <outlet property="smsCodeTFD" destination="pAX-cd-6Cd" id="Kdz-DY-CXp"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入手机号" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eUi-Cv-eGv">
+                    <rect key="frame" x="100" y="121" width="400" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入验证码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pAX-cd-6Cd">
+                    <rect key="frame" x="100" y="171" width="400" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入新密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8cF-Nt-88u">
+                    <rect key="frame" x="100" y="221" width="400" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请再次输入新密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rd3-RR-F48">
+                    <rect key="frame" x="100" y="271" width="400" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tpz-R2-cbM">
+                    <rect key="frame" x="100" y="351" width="400" height="30"/>
+                    <color key="backgroundColor" red="0.24313725489999999" green="0.51372549020000002" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="重置">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="reSetAction:" destination="-1" eventType="touchUpInside" id="Nr0-UU-MNR"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1dd-o9-Wg4">
+                    <rect key="frame" x="454" y="172" width="43" height="29"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="29" id="0TM-ab-Lla"/>
+                        <constraint firstAttribute="width" constant="43" id="Z3A-yT-cTV"/>
+                    </constraints>
+                    <state key="normal" title="获取"/>
+                    <connections>
+                        <action selector="getCodeAction:" destination="-1" eventType="touchUpInside" id="ad7-rR-4Cj"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="eUi-Cv-eGv" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="2xm-E5-Unm"/>
+                <constraint firstItem="rd3-RR-F48" firstAttribute="width" secondItem="8cF-Nt-88u" secondAttribute="width" id="3oe-4l-Z3P"/>
+                <constraint firstItem="1dd-o9-Wg4" firstAttribute="top" secondItem="eUi-Cv-eGv" secondAttribute="bottom" constant="21" id="3pZ-cH-J0D"/>
+                <constraint firstItem="pAX-cd-6Cd" firstAttribute="top" secondItem="eUi-Cv-eGv" secondAttribute="bottom" constant="20" id="4hT-eX-rUq"/>
+                <constraint firstItem="eUi-Cv-eGv" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="2/3" id="5xv-hY-oyh"/>
+                <constraint firstItem="8cF-Nt-88u" firstAttribute="top" secondItem="pAX-cd-6Cd" secondAttribute="bottom" constant="20" id="6Kk-tp-GuI"/>
+                <constraint firstItem="rd3-RR-F48" firstAttribute="top" secondItem="8cF-Nt-88u" secondAttribute="bottom" constant="20" id="6VF-aG-UXP"/>
+                <constraint firstItem="eUi-Cv-eGv" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="121" id="9Ks-QB-yFy"/>
+                <constraint firstItem="1dd-o9-Wg4" firstAttribute="leading" secondItem="pAX-cd-6Cd" secondAttribute="trailing" constant="-46" id="JFE-BE-o7w"/>
+                <constraint firstItem="pAX-cd-6Cd" firstAttribute="centerX" secondItem="eUi-Cv-eGv" secondAttribute="centerX" id="JeD-zI-tjQ"/>
+                <constraint firstItem="pAX-cd-6Cd" firstAttribute="width" secondItem="eUi-Cv-eGv" secondAttribute="width" id="NW4-Pm-W8B"/>
+                <constraint firstItem="8cF-Nt-88u" firstAttribute="width" secondItem="pAX-cd-6Cd" secondAttribute="width" id="PxC-7a-JAi"/>
+                <constraint firstItem="tpz-R2-cbM" firstAttribute="centerX" secondItem="rd3-RR-F48" secondAttribute="centerX" id="Vr2-oK-p3s"/>
+                <constraint firstItem="rd3-RR-F48" firstAttribute="centerX" secondItem="8cF-Nt-88u" secondAttribute="centerX" id="qem-I9-IR1"/>
+                <constraint firstItem="tpz-R2-cbM" firstAttribute="width" secondItem="rd3-RR-F48" secondAttribute="width" id="tKg-W9-ZGZ"/>
+                <constraint firstItem="8cF-Nt-88u" firstAttribute="centerX" secondItem="pAX-cd-6Cd" secondAttribute="centerX" id="xCA-rt-E0H"/>
+                <constraint firstItem="tpz-R2-cbM" firstAttribute="top" secondItem="rd3-RR-F48" secondAttribute="bottom" constant="50" id="zBT-zV-6jT"/>
+            </constraints>
+            <point key="canvasLocation" x="281" y="316"/>
+        </view>
+    </objects>
+</document>

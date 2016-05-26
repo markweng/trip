@@ -29,8 +29,9 @@
 @implementation GangAotaiControllerViewController
 
 - (void)viewDidLoad {
-    self.titleString = @"港澳台";
     [super viewDidLoad];
+    self.titleString = @"港澳台";
+
     _dataArray = [[NSMutableArray alloc] init];
     [self createCollectionView];
     [self loadNetData];

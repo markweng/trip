@@ -20,6 +20,7 @@
 #import "ListStoryModel.h"
 #import "ScrollViewController.h"
 #import "UMSocial.h"
+#import <BmobSDK/Bmob.h>
 
 #define Font [UIFont systemFontOfSize:20]
 @interface StoryDetailViewController ()<UITableViewDataSource, UITableViewDelegate, UMSocialUIDelegate>{
@@ -86,7 +87,8 @@
     [UMSocialData defaultData].extConfig.sinaData.urlResource.url = url;
     [UMSocialData defaultData].extConfig.wechatSessionData.url = url;
     [UMSocialData defaultData].extConfig.wechatTimelineData.url = url;
-
+    [UMSocialData defaultData].extConfig.qzoneData.url = url;
+    [UMSocialData defaultData].extConfig.qqData.url = url;
     [UMSocialSnsService presentSnsIconSheetView:self appKey:UMENG_SHAREKEY
     shareText:shareText shareImage:_shareImage shareToSnsNames:@[UMShareToSina,UMShareToQzone,UMShareToEmail,UMShareToSms,UMShareToWechatSession,UMShareToWechatTimeline,UMShareToQQ,UMShareToFacebook,UMShareToTwitter]
       delegate:self];
@@ -102,7 +104,11 @@
     }
 }
 - (void)likeAction:(UIButton *)button {
-    
+    BmobUser *user = [BmobUser getCurrentUser];
+    if (!user) {
+        [self showHudWithTitle:@"请先登录"];
+        return;
+    }
     BOOL isExistRecord = [[DBManager sharedManager] isExistInfoForid:_model.spot_id tripid:nil];
     if (isExistRecord) {
         [[DBManager sharedManager] deleteModelForPid:_model.spot_id];

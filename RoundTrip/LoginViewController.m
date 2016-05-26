@@ -9,9 +9,11 @@
 #import "LoginViewController.h"
 #import <UIImageView+WebCache.h>
 #import <BmobSDK/Bmob.h>
-#import "ResignViewController.h"
 #import "SignUpTableViewController.h"
-
+#import "UIViewController+Common.h"
+#import "MBProgressHUD.h"
+#import "NSString+Commom.h"
+#import "ReSetPsdViewController.h"
 @interface LoginViewController () {
 
 
@@ -28,26 +30,42 @@
 
 @implementation LoginViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+    
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+    
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:21/255.0 green:153/255.0 blue:225/255.0 alpha:1.0];
+    NSDictionary *dict = @{NSFontAttributeName:[UIFont systemFontOfSize:20],NSForegroundColorAttributeName:[UIColor whiteColor] };
+    [self.navigationController.navigationBar setTitleTextAttributes:dict];
+}
+
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
     [self setResignBolder];
     [self.navigationController setNavigationBarHidden:YES];
+    PsdTextField.secureTextEntry = YES;
 
 
 }
 - (IBAction)loginAction:(id)sender {
     
-    
-    [BmobUser loginWithUsernameInBackground:UserNameTextField.text password:PsdTextField.text block:^(BmobUser *user, NSError *error) {
+    if ([self isEmpty]) {
+        
+        return;
+    }
+    [BmobUser loginWithUsernameInBackground:UserNameTextField.text password:MD5Hash(PsdTextField.text) block:^(BmobUser *user, NSError *error) {
         if (error) {
+            [self showHudWithTitle:@"用户名或密码错误"];
+
             NSLog(@"%@",[error description]);
+
         } else {
             
-            NSLog(@"%@",[user description]);
-//            UIAlertView *tip = [[UIAlertView alloc] initWithTitle:nil message:@"登录成功" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-//            [tip show];
             [[NSNotificationCenter defaultCenter] postNotificationName:@"LOGINSUCCESS" object:nil];
-            [self dismissViewControllerAnimated:self completion:^{
+            [self dismissViewControllerAnimated:YES completion:^{
                 
             }];
         }
@@ -55,10 +73,6 @@
 
 }
 - (IBAction)resignAction:(id)sender {
-    
-//    ResignViewController  *resignVC = [[ResignViewController alloc] init];
-//    
-//   [self.navigationController pushViewController:resignVC animated:YES];
     
     UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     SignUpTableViewController *signUp = [mainStoryboard instantiateViewControllerWithIdentifier:@"SignUpTableViewController"];
@@ -94,10 +108,23 @@
 }
 
 - (void)setResignBolder {
-  
+    
+    resign.layer.cornerRadius = 5.0;
     resign.layer.borderWidth = 0.5;
     resign.layer.borderColor = [[UIColor lightGrayColor] CGColor];
 
+}
+- (IBAction)disMiss:(id)sender {
+    
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+    }];
+}
+- (IBAction)forgectPsdAction:(id)sender {
+    
+    ReSetPsdViewController *reSetPsd = [[ReSetPsdViewController alloc] init];
+    [self.navigationController pushViewController:reSetPsd animated:YES];
+    
 }
 
 
@@ -106,18 +133,29 @@
     // Dispose of any resources that can be recreated.
 }
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-   [self dismissViewControllerAnimated:YES completion:^{
-       
-   }];
+  
+    if ([PsdTextField isFirstResponder]) {
+        
+        [PsdTextField resignFirstResponder];
+        return;
+    } else if ([UserNameTextField isFirstResponder]) {
+        
+        [UserNameTextField resignFirstResponder];
+        return;
+    }
 }
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (BOOL)isEmpty {
+    
+    if (UserNameTextField.text.length == 0) {
+        
+        return YES;
+    } else if (PsdTextField.text.length == 0) {
+        [self showHudWithTitle:@""];
+
+        return YES;
+    }
+    return NO;
 }
-*/
 
 @end

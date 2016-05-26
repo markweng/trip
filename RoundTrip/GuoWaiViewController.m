@@ -29,8 +29,9 @@
 @implementation GuoWaiViewController
 
 - (void)viewDidLoad {
-    self.titleString = @"国外城市";
     [super viewDidLoad];
+    self.titleString = @"国外城市";
+
     _dataArray = [[NSMutableArray alloc] init];
     [self createCollectionView];
     [self loadNetData];

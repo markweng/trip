@@ -172,10 +172,13 @@
     if (indexPath.section == 1) {
         TravelNoteDetailController *noteDetailController = [[TravelNoteDetailController alloc] init];
         TripsModel *trip = _tripsArray[indexPath.row];
-        ItemModel *model = [[ItemModel alloc] init];
+        ElementDataModel *model = [[ElementDataModel alloc] init];
         model.cover_image =  trip.cover_image_default;
         model.eid = trip.tid;
         model.name = trip.name;
+        model.text = trip.name;
+        model.index_cover = trip.cover_image_default;
+        model.share_url = trip.share_url;
         
         
         noteDetailController.model = model;

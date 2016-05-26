@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -26,7 +26,7 @@
                         <constraint firstAttribute="height" constant="30" id="wn7-8U-lYy"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                    <textInputTraits key="textInputTraits"/>
                 </textField>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="skK-w2-hDg">
                     <rect key="frame" x="247" y="204" width="186" height="30"/>
@@ -38,8 +38,8 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hYr-3N-7xT">
-                    <rect key="frame" x="170" y="275" width="260" height="30"/>
-                    <color key="backgroundColor" red="0.30196078431372547" green="0.59999999999999998" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
+                    <rect key="frame" x="170" y="307" width="260" height="30"/>
+                    <color key="backgroundColor" red="0.24313725490196078" green="0.51372549019607838" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="iJK-bA-YX4"/>
                         <constraint firstAttribute="width" constant="260" id="ifr-Mm-8J3"/>
@@ -112,15 +112,26 @@
                         <action selector="resignAction:" destination="-1" eventType="touchUpInside" id="Tpd-wz-OoM"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hnG-jm-pIp">
-                    <rect key="frame" x="265" y="360" width="70" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pyq-bY-ZJu">
+                    <rect key="frame" x="25" y="22" width="33" height="34"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="30" id="2Cg-Ou-qrU"/>
-                        <constraint firstAttribute="width" constant="70" id="4bK-tf-fLG"/>
+                        <constraint firstAttribute="height" constant="34" id="pE0-Xa-zKn"/>
+                        <constraint firstAttribute="width" constant="33" id="rkK-JC-c9x"/>
                     </constraints>
-                    <state key="normal" title="上传图像"/>
+                    <state key="normal" title="Button" image="disMiss.png"/>
                     <connections>
-                        <action selector="upLoadIcon:" destination="-1" eventType="touchUpInside" id="OJf-ot-NCb"/>
+                        <action selector="disMiss:" destination="-1" eventType="touchUpInside" id="xpM-Do-atO"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J3i-40-heu">
+                    <rect key="frame" x="354" y="250" width="79" height="23"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="79" id="ZOd-PM-GV6"/>
+                        <constraint firstAttribute="height" constant="23" id="gCy-Ar-e73"/>
+                    </constraints>
+                    <state key="normal" title="忘记密码"/>
+                    <connections>
+                        <action selector="forgectPsdAction:" destination="-1" eventType="touchUpInside" id="t3h-Rn-27j"/>
                     </connections>
                 </button>
             </subviews>
@@ -132,22 +143,27 @@
                 <constraint firstItem="0xb-ZY-Ug6" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="B6h-0L-qgc"/>
                 <constraint firstItem="4cy-7Z-YBJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="155" id="BUZ-eY-NKD"/>
                 <constraint firstItem="us0-Xm-0nu" firstAttribute="leading" secondItem="4cy-7Z-YBJ" secondAttribute="trailing" constant="38" id="Bzk-GW-Lqg"/>
-                <constraint firstItem="hnG-jm-pIp" firstAttribute="top" secondItem="hYr-3N-7xT" secondAttribute="bottom" constant="55" id="CDL-1J-ODn"/>
                 <constraint firstItem="skK-w2-hDg" firstAttribute="top" secondItem="xtL-VL-AyL" secondAttribute="bottom" constant="10.5" id="CEA-tX-Pkk"/>
                 <constraint firstItem="Fio-MU-0zM" firstAttribute="top" secondItem="xtL-VL-AyL" secondAttribute="bottom" constant="10.5" id="DeV-KU-Chr"/>
                 <constraint firstItem="ziw-rw-ExD" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="K0s-ib-5GX"/>
                 <constraint firstItem="4cy-7Z-YBJ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="-112" id="K3R-ly-Vld"/>
                 <constraint firstItem="OCw-kh-CSL" firstAttribute="top" secondItem="Fio-MU-0zM" secondAttribute="bottom" constant="8" id="NYf-Sx-NtD"/>
-                <constraint firstItem="hYr-3N-7xT" firstAttribute="top" secondItem="OCw-kh-CSL" secondAttribute="bottom" constant="32.5" id="RI3-Lo-ITb"/>
+                <constraint firstItem="hYr-3N-7xT" firstAttribute="top" secondItem="OCw-kh-CSL" secondAttribute="bottom" constant="64.5" id="RI3-Lo-ITb"/>
+                <constraint firstItem="pyq-bY-ZJu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="25" id="RPn-fI-c3v"/>
+                <constraint firstItem="J3i-40-heu" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="93.5" id="ZHB-4P-hJg"/>
                 <constraint firstItem="0xb-ZY-Ug6" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="61" id="fcT-d6-2bh"/>
                 <constraint firstItem="hYr-3N-7xT" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="hbS-na-fBQ"/>
-                <constraint firstItem="hnG-jm-pIp" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="k16-Ol-gJz"/>
                 <constraint firstItem="Fio-MU-0zM" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="-112" id="kph-Sv-eIs"/>
+                <constraint firstItem="J3i-40-heu" firstAttribute="top" secondItem="OCw-kh-CSL" secondAttribute="bottom" constant="7.5" id="rky-Op-BNE"/>
                 <constraint firstItem="xtL-VL-AyL" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="s8U-MZ-fZt"/>
                 <constraint firstItem="xtL-VL-AyL" firstAttribute="top" secondItem="4cy-7Z-YBJ" secondAttribute="bottom" constant="8" id="tQ5-Aa-hny"/>
+                <constraint firstItem="pyq-bY-ZJu" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="22" id="zp8-Ee-5w8"/>
                 <constraint firstAttribute="bottom" secondItem="ziw-rw-ExD" secondAttribute="bottom" constant="27" id="zzc-bn-VwZ"/>
             </constraints>
-            <point key="canvasLocation" x="353" y="194"/>
+            <point key="canvasLocation" x="362" y="147"/>
         </view>
     </objects>
+    <resources>
+        <image name="disMiss.png" width="64" height="64"/>
+    </resources>
 </document>

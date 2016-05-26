@@ -8,6 +8,7 @@
 
 #import "BaseViewController.h"
 #import "UIView+Common.h"
+#import "MBProgressHUD.h"
 @interface BaseViewController ()
 @property (nonatomic, strong) UILabel *titleLabel;
 @end
@@ -65,5 +66,19 @@
     [super didReceiveMemoryWarning];
 
 }
+- (void)setTitle:(NSString *)title {
 
+    _titleLabel.text = title;
+
+}
+- (void)showHudWithTitle:(NSString *)title {
+    
+    UIWindow *window = [[UIApplication sharedApplication] keyWindow];
+    MBProgressHUD *HUD = [MBProgressHUD showHUDAddedTo:window.rootViewController.view animated:YES];
+    HUD.labelText = title;
+    HUD.labelFont = [UIFont systemFontOfSize:14];
+    HUD.mode = MBProgressHUDModeText;
+    [HUD hide:YES afterDelay:2];
+
+}
 @end

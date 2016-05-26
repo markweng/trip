@@ -18,8 +18,10 @@
 #import "UMSocial.h"
 #import "UMSocialSinaSSOHandler.h"
 #import "UMSocialWechatHandler.h"
+#import "UMSocialQQHandler.h"
 
 #import "AllUrl.h"
+#import "GuideViewController.h"
 #define BMOB_KEY @"f8eed535e2a4a992bffd01ad503d65f6"
 @interface AppDelegate ()
 
@@ -29,23 +31,41 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-   [NSThread sleepForTimeInterval:3.0];
+    
    [Bmob registerWithAppKey:BMOB_KEY];
    [UMSocialData setAppKey:UMENG_SHAREKEY];
    [UMSocialSinaSSOHandler openNewSinaSSOWithAppKey:@"987403555" secret:@"6c64d654f2f8b98018c36ac521f78b5e" RedirectURL:@"http://sns.whalecloud.com/sina2/callback"];
     [UMSocialWechatHandler setWXAppId:@"wx195bfe3524440c76" appSecret:@"1ad889aab653b376085b208a12f03d84" url:nil];
+    [UMSocialQQHandler setQQWithAppId:@"1105414776" appKey:@"FSi62fbCGz7dqy9u" url:@"http://www.baidu.com"];
     //设置所有状态栏的颜色
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     //设置启动页状态了隐藏
     [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];
+    
+    //引导页
+    if(![[NSUserDefaults standardUserDefaults] boolForKey:@"firstLunch"]) {
+    
+        GuideViewController *guideVC = [[GuideViewController alloc] init];
+        
+        self.window.rootViewController = guideVC;
+        
+    } else {
+    
+        [self appLunch];
+    }
+    
+    return YES;
+}
+
+- (void)appLunch {
     //设置网络状态监测
     [[MyNetWorking shareNet] setReachabilityMonitor];
-
+    
     _homeViewController = [[HomeViewController alloc] init];
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:_homeViewController];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     LeftViewController *leftDrawer = [[LeftViewController alloc] init];
-   
+    
     MMDrawerController  *drawerController = [[MMDrawerController alloc] initWithCenterViewController:navController leftDrawerViewController:leftDrawer];
     CGFloat width = screenWidth();
     // 设置左边视图窗口的大小
@@ -59,7 +79,9 @@
     
     self.window.rootViewController = drawerController;
     [self.window makeKeyAndVisible];
-    return YES;
+
+
+
 }
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {

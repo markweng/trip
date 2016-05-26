@@ -25,6 +25,13 @@
 
 @implementation FavoriteViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+
+    [super viewWillAppear:animated];
+    [self createDataSource];
+
+
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self createTableView];
