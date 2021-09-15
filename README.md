@@ -1,6 +1,6 @@
 # trip app
 
-A trip app with iOS Native
+A trip app with iOS native
 
 ## screen
 
